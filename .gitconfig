@@ -1,0 +1,10 @@
+[alias]
+	st = status
+	co = checkout
+
+[user]
+	name = David Bella
+	email = davidhbella@gmail.com
+
+[core]
+	editor = nvim
