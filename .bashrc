@@ -30,7 +30,7 @@ source ~/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
 
 source /usr/share/chruby/chruby.sh
+chruby ruby-2.4.2
 source /usr/share/chruby/auto.sh
-
 
 source /home/david/Documents/StellaService/connect-stack/stack.sh

@@ -36,7 +36,6 @@ set smartindent
 set listchars=tab:>-,trail:.
 set list!
 
-
 " Allow buffer switching without saving them
 set hidden
 
@@ -44,7 +43,11 @@ set hidden
 :set ignorecase
 :set smartcase
 
+" leader-c to copy current file name into clipboard buffer
+nmap <leader>c :let @+ = expand("%")<cr>
 
+
+""" vim-fugitive
 " Make diffs vertical for vim-fugitive
 set diffopt+=vertical
 
@@ -66,6 +69,7 @@ let NERDTreeHighlightCursorline=0
 " Binding to locate current file in NERDTree
 map <leader>l :NERDTreeFind<cr>
 
+
 """ NERDCommenter
 " filetype checking
 filetype plugin on
@@ -77,18 +81,42 @@ let g:NERDSpaceDelims = 1
 map <C-c> \c<space>
 
 
-" leader-c to copy current file name into clipboard buffer
-nmap <leader>c :let @+ = expand("%")<cr>
-
-
 """ Buffergator
 " Have Buffergator open from the right and make it bigger
 let buffergator_viewport_split_policy="R"
 let buffergator_split_size=80
 
 
+""" CtrlP
+" Having trouble getting some files to show in non-MRU (most recently used)
+" mode - default to MRU for now...
+" let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Ignore some junk
+" set wildignore+=*/tmp/*
+" let g:ctrlp_custom_ignore = 'node_modules\|tmp'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|node_modules\|public\/assets\|tmp',
+  \ }
+
+" use OS `find`
+" let g:ctrlp_user_command = 'find %s -type f' 
+
+" let g:ctrlp_user_command = 'find %s -type d \( -path ./node_modules -o -path ./vendor \) -prune -o -type f -print'
+
+
+""" Ack.vim
+" Don't jump to first file (aka use Ack! instead of Ack)
+cnoreabbrev Ack Ack!
+
+" Prefer the silver searcher (if available)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+
 """ Neomake
-" Autorun Neokmake on file save
+" Autorun Neomake on file save
 autocmd! BufWritePost * Neomake
 
 " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
@@ -120,7 +148,23 @@ let g:neomake_elixir_mycredo_maker = {
 
 
 let g:neomake_javascript_eslint_maker = {
-      \ 'args': ['--format', 'compact', '--config', './.eslintrc'],
+      \ 'args': ['--format', 'compact', '--config', './.eslintrc.airbnb'],
       \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#'
       \ }
+
+
+""" ALT
+" Run a given vim command on the results of alt from a given path.
+" See usage below.
+function! AltCommand(path, vim_command)
+  let l:alternate = system("alt " . a:path)
+  if empty(l:alternate)
+    echo "No alternate file for " . a:path . " exists!"
+  else
+    exec a:vim_command . " " . l:alternate
+  endif
+endfunction
+
+" Find the alternate file for the current path and open it
+nnoremap <leader>a :call AltCommand(expand('%'), ':e')<cr>
