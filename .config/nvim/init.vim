@@ -157,8 +157,22 @@ let g:neomake_javascript_eslint_maker = {
 """ ALT
 " Run a given vim command on the results of alt from a given path.
 " See usage below.
+" function! AltCommand(path, vim_command)
+  " let l:alternate = system("alt " . a:path)
+  " if empty(l:alternate)
+    " echo "No alternate file for " . a:path . " exists!"
+  " else
+    " exec a:vim_command . " " . l:alternate
+  " endif
+" endfunction
+
+" Run a given vim command on the results of alt from a given path.
+" See usage below.
+" this is the author of Alt's personal vim config - says it's faster to use
+" `find` instead of the build in finder in Alt
+" it looks pretty OSX and Rust project specific, tweak to my own needs...
 function! AltCommand(path, vim_command)
-  let l:alternate = system("alt " . a:path)
+  let l:alternate = system("find . -path ./_site -prune -or -path ./target -prune -or -path ./.DS_Store -prune -or -path ./build -prune -or -path ./Carthage -prune -or -path tags -prune -or -path ./tmp -prune -or -path ./log -prune -or -path ./.git -prune -or -type f -print | alt -f - " . a:path)
   if empty(l:alternate)
     echo "No alternate file for " . a:path . " exists!"
   else
