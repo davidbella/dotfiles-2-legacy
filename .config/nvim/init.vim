@@ -46,6 +46,9 @@ set hidden
 " leader-c to copy current file name into clipboard buffer
 nmap <leader>c :let @+ = expand("%")<cr>
 
+" disables nvim from setting a guicursor (keeps terminal settings cursor)
+:set guicursor=
+
 
 """ vim-fugitive
 " Make diffs vertical for vim-fugitive
@@ -85,6 +88,9 @@ map <C-c> \c<space>
 " Have Buffergator open from the right and make it bigger
 let buffergator_viewport_split_policy="R"
 let buffergator_split_size=80
+
+" Show relative path instead of absolute path
+let buffergator_show_full_directory_path=0
 
 
 """ CtrlP
