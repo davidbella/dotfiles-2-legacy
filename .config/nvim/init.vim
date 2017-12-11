@@ -67,7 +67,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeWinSize=30
 
 " Hide cursorline in NERDTree
-let NERDTreeHighlightCursorline=0
+" let NERDTreeHighlightCursorline=0
 
 " Binding to locate current file in NERDTree
 map <leader>l :NERDTreeFind<cr>
@@ -154,9 +154,16 @@ let g:neomake_elixir_mycredo_maker = {
 
 
 let g:neomake_javascript_eslint_maker = {
-      \ 'args': ['--format', 'compact', '--config', './.eslintrc.airbnb'],
+      \ 'args': ['--format', 'compact', '--config', './.eslintrc'],
       \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#'
+      \ }
+
+
+let g:neomake_ruby_rubocop_maker = {
+      \ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names'],
+      \ 'errorformat': '%f:%l:%c: %t: %m,%E%f:%l: %m',
+      \ 'postprocess': function('neomake#makers#ft#ruby#RubocopEntryProcess')
       \ }
 
 
@@ -188,3 +195,10 @@ endfunction
 
 " Find the alternate file for the current path and open it
 nnoremap <leader>a :call AltCommand(expand('%'), ':e')<cr>
+
+hi Search cterm=reverse ctermbg=0 guibg=NONE
+hi Visual cterm=bold ctermbg=NONE guibg=NONE
+hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
+hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
+hi DiffDelete cterm=bold ctermfg=1 ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE

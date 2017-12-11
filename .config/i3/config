@@ -17,6 +17,11 @@ set $mod Mod1
 # is used in the bar {} block below.
 font pango:M+ 1m Regular 14 
 
+client.focused          #000000 #000000 #000000 #000000
+client.focused_inactive #000000 #000000 #000000 #000000
+client.unfocused        #000000 #000000 #000000 #000000
+client.urgent           #000000 #000000 #000000 #000000
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8

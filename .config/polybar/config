@@ -246,8 +246,8 @@ interval = 1
 date = "%F"
 date-alt = "%F"
 
-time = "%A %r"
-time-alt = "%A %r"
+time = "%A %R"
+time-alt = "%A %R"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
