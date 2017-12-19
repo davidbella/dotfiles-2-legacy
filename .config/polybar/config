@@ -9,14 +9,17 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #171717
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #dbcba2
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+
+green = #98971a
+red = #cc241d
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -49,7 +52,7 @@ font-2 = "icons:pixelsize=16;3"
 
 modules-left = i3
 modules-center = date
-modules-right = xbacklight volume wlan eth filesystem memory cpu temperature battery powermenu
+modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -70,26 +73,6 @@ modules-right = xbacklight volume wlan eth filesystem memory cpu temperature bat
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -99,7 +82,7 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-} :  %percentage_used%% (%free%)
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-label-mounted-underline = ${colors.primary}
+label-mounted-underline = ${colors.green}
 
 [module/bspwm]
 type = internal/bspwm
@@ -127,7 +110,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+;pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -136,12 +119,13 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-underline = ${colors.green}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-underline = ${colors.foreground-alt}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -194,7 +178,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.green}
 label = %percentage:2%%
 
 [module/memory]
@@ -202,7 +186,7 @@ type = internal/memory
 interval = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.green}
 label = %percentage_used%%
 
 [module/wlan]
@@ -211,12 +195,12 @@ interface = wlp58s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.green}
 label-connected = %essid% - %upspeed% up %downspeed% down
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
+format-disconnected-underline = ${colors.foreground-alt}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
@@ -251,7 +235,7 @@ time-alt = "%A %R"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.green}
 
 label = %date% %time%
 
@@ -264,7 +248,8 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+format-muted-underline = ${colors.foreground-alt}
+label-muted = mute
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -292,13 +277,13 @@ full-at = 100
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.green}
 
 label-charging = %percentage%%
 ; label-charging = %percentage%% - %time%
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.red}
 
 label-discharging = %percentage%%
 ; label-discharging = %percentage%% - %time
@@ -323,7 +308,6 @@ ramp-capacity-foreground = ${colors.foreground-alt}
 animation-charging-0 = " "
 animation-charging-1 = " "
 animation-charging-2 = " "
-animation-charging-3 = " "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -333,7 +317,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = ${colors.green}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -354,9 +338,9 @@ expand-right = true
 format-spacing = 1
 
 label-open = "  "
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.red}
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.red}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
