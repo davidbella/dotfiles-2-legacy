@@ -196,9 +196,11 @@ endfunction
 " Find the alternate file for the current path and open it
 nnoremap <leader>a :call AltCommand(expand('%'), ':e')<cr>
 
+" lots of very specific highlighting color changes
 hi Search cterm=reverse ctermbg=0 guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
 hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
 hi DiffDelete cterm=bold ctermfg=1 ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
+hi MatchParen cterm=underline ctermbg=NONE guibg=NONE
