@@ -107,7 +107,7 @@ colors:
     # hard contrast: background = '0x1d2021'
     background: '0x101010'
     # soft contrast: background = '0x32302f'
-    foreground: '0xdbcba2'
+    foreground: '0xffeea0'
 
   # Normal colors
   normal:
