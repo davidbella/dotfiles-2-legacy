@@ -196,7 +196,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.green}
-label-connected = %essid% - %upspeed% up %downspeed% down
+label-connected = %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -285,8 +285,8 @@ label-charging = %percentage%%
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${colors.red}
 
-label-discharging = %percentage%%
-; label-discharging = %percentage%% - %time
+; label-discharging = %percentage%%
+label-discharging = %percentage%% - %time%
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
