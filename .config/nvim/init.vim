@@ -196,6 +196,9 @@ endfunction
 " Find the alternate file for the current path and open it
 nnoremap <leader>a :call AltCommand(expand('%'), ':e')<cr>
 
+" leader-h to clear highlights
+nmap <leader>h :nohlsearch<cr>
+
 " lots of very specific highlighting color changes
 hi Search cterm=reverse ctermbg=0 guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
