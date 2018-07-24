@@ -24,6 +24,8 @@ settings:
     global: 14pt monospace
   fonts.tabs:
     global: 14pt monospace
+  hints.uppercase:
+    global: true
   scrolling.bar:
     global: true
   scrolling.smooth:
