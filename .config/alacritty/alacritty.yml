@@ -101,33 +101,34 @@ render_timer: false
 custom_cursor_colors: false
 
 # trim-yer-beard - terminal.sexy
+# ocean.dark - terminal.sexy
 colors:
   # Default colors
   primary:
-    background: '0x191716'
-    foreground: '0xdaba8b'
+    background: '0x2b303b'
+    foreground: '0xc0c5ce'
 
   # Normal colors
   normal:
-    black:   '0x0f0e0d'
-    red:     '0x845336'
-    green:   '0x57553c'
-    yellow:  '0xa17e3e'
-    blue:    '0x43454f'
-    magenta: '0x604848'
-    cyan:    '0x5c6652'
-    white:   '0xa18b62'
+    black:   '0x2b303b'
+    red:     '0xbf616a'
+    green:   '0xa3be8c'
+    yellow:  '0xebcb8b'
+    blue:    '0x8fa1b3'
+    magenta: '0xb48ead'
+    cyan:    '0x96b5b4'
+    white:   '0xc0c5ce'
 
   # Bright colors
   bright:
-    black:   '0x383332'
-    red:     '0x8c4f4a'
-    green:   '0x898471'
-    yellow:  '0xc8b491'
-    blue:    '0x65788f'
-    magenta: '0x755e4a'
-    cyan:    '0x718062'
-    white:   '0xbc9d66'
+    black:   '0x65737e'
+    red:     '0xbf616a'
+    green:   '0xa3be8c'
+    yellow:  '0xebcb8b'
+    blue:    '0x8fa1b3'
+    magenta: '0xb48ead'
+    cyan:    '0x96b5b4'
+    white:   '0xeff1f5'
 
 # Visual Bell
 #
@@ -156,7 +157,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.94
+background_opacity: 0.90
 
 # Mouse bindings
 #
