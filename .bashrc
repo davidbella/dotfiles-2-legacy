@@ -19,6 +19,7 @@ alias ls='ls -l --color=auto'
 alias la='ls -la --color=auto'
 
 alias dco='docker-compose '
+alias dcof='docker-compose -f $HOME/Documents/StellaService/connect-stack/docker-compose.yml'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
