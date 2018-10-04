@@ -79,7 +79,7 @@ bindsym $mod+Shift+Left move workspace to output left
 bindsym $mod+Shift+Right move workspace to output right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -162,5 +162,5 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec allow_rgb10_configs=false compton -b
-exec --no-startup-id feh --bg-scale $HOME/Downloads/moon.jpg
+exec --no-startup-id feh --bg-scale $HOME/Downloads/ocean.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
