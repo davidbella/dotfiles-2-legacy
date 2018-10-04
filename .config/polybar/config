@@ -52,7 +52,7 @@ font-2 = "icons:pixelsize=16;3"
 
 modules-left = i3
 modules-center = date
-modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
+modules-right = volume volume2 volume3 wlan eth filesystem memory cpu temperature battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -243,8 +243,43 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+format-volume-underline = ${colors.green}
+label-volume = M
 label-volume-foreground = ${root.foreground}
+
+master-mixer = Master
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+format-muted-underline = ${colors.foreground-alt}
+label-muted = M mute
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+bar-volume-indicator = .
+bar-volume-indicator-font = 2
+bar-volume-fill = /
+bar-volume-fill-font = 2
+bar-volume-empty = \
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/volume2]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+format-volume-underline = ${colors.green}
+label-volume = H
+label-volume-foreground = ${root.foreground}
+
+master-mixer = Headphone
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
@@ -259,12 +294,44 @@ bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-gradient = true
+bar-volume-indicator = .
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = /
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = \
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/volume3]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+format-volume-underline = ${colors.green}
+label-volume = S
+label-volume-foreground = ${root.foreground}
+
+master-mixer = Speaker
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+format-muted-underline = ${colors.foreground-alt}
+label-muted = S mute
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = true
+bar-volume-indicator = .
+bar-volume-indicator-font = 2
+bar-volume-fill = /
+bar-volume-fill-font = 2
+bar-volume-empty = \
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
