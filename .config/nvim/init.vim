@@ -92,6 +92,9 @@ let buffergator_split_size=80
 " Show relative path instead of absolute path
 let buffergator_show_full_directory_path=0
 
+" Sort by full filepath, alphabetically
+let buffergator_sort_regime="filepath"
+
 
 """ CtrlP
 " Having trouble getting some files to show in non-MRU (most recently used)
@@ -154,7 +157,7 @@ let g:neomake_elixir_mycredo_maker = {
 
 
 let g:neomake_javascript_eslint_maker = {
-      \ 'args': ['--format', 'compact', '--config', './.eslintrc'],
+      \ 'args': ['--format', 'compact', '--config', './.eslintrc.yml'],
       \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#'
       \ }
@@ -207,3 +210,5 @@ hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
 hi DiffDelete cterm=bold ctermfg=1 ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
 hi MatchParen cterm=underline ctermbg=NONE guibg=NONE
+hi SpellCap cterm=underline ctermbg=NONE guibg=NONE
+hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
