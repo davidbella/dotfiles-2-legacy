@@ -15,8 +15,8 @@ HISTCONTROL=ignoredups
 
 # Aliases
 alias vim='nvim'
-alias ls='ls -l --color=auto'
-alias la='ls -la --color=auto'
+alias ls='ls -lh --color=auto'
+alias la='ls -lha --color=auto'
 
 alias dco='docker-compose '
 alias dcof='docker-compose -f $HOME/Documents/StellaService/connect-stack/docker-compose.yml'
