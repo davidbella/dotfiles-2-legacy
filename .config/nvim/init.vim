@@ -49,6 +49,9 @@ nmap <leader>c :let @+ = expand("%")<cr>
 " disables nvim from setting a guicursor (keeps terminal settings cursor)
 :set guicursor=
 
+" set column line at 80
+set colorcolumn=81
+
 
 """ vim-fugitive
 " Make diffs vertical for vim-fugitive
