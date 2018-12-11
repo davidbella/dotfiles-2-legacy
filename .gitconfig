@@ -2,6 +2,8 @@
 	st = status
 	co = checkout
 	lg = log --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)%<(20)%an-%Creset %Cgreen%<(15)%cr%Creset- %s%C(yellow)%d%Creset' --abbrev-commit -25
+  fpush = push -f
+  lpush = push --force-with-lease
 
 [user]
 	name = David Bella
