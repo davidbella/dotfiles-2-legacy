@@ -50,7 +50,7 @@ nmap <leader>c :let @+ = expand("%")<cr>
 :set guicursor=
 
 " set column line at 80
-set colorcolumn=81
+set colorcolumn=101
 
 
 """ vim-fugitive
@@ -108,7 +108,7 @@ let buffergator_sort_regime="filepath"
 " set wildignore+=*/tmp/*
 " let g:ctrlp_custom_ignore = 'node_modules\|tmp'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|node_modules\|public\/assets\|tmp',
+  \ 'dir':  '\.git$\|node_modules\|public\/assets\|tmp\|_build',
   \ }
 
 " use OS `find`
@@ -215,3 +215,4 @@ hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
 hi MatchParen cterm=underline ctermbg=NONE guibg=NONE
 hi SpellCap cterm=underline ctermbg=NONE guibg=NONE
 hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
+hi Folded cterm=underline ctermfg=1 ctermbg=NONE
