@@ -31,7 +31,7 @@ source ~/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
 
 source /usr/share/chruby/chruby.sh
-chruby ruby-2.5.1
+chruby ruby-2.5.3
 source /usr/share/chruby/auto.sh
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
