@@ -1,6 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'elixir-lang/vim-elixir'
 Plug 'chemzqm/vim-jsx-improve'
+Plug 'rhysd/vim-crystal'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'

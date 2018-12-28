@@ -35,3 +35,6 @@ chruby ruby-2.5.3
 source /usr/share/chruby/auto.sh
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
+# bash snippet to install yarn dependencies without installing yarn
+alias dockeryarn='docker run --rm -it -v $(pwd):/app -w /app node yarn'
