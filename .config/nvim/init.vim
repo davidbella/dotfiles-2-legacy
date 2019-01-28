@@ -46,18 +46,21 @@ set fcs=eob:\
 set hidden
 
 " Case insensitive searches, smartly
-:set ignorecase
-:set smartcase
+set ignorecase
+set smartcase
+
+let &colorcolumn=join(range(81,999),",")
+
+let mapleader = ","
 
 " leader-c to copy current file name into clipboard buffer
 nmap <leader>c :let @+ = expand("%")<cr>
 
 " disables nvim from setting a guicursor (keeps terminal settings cursor)
-:set guicursor=
+set guicursor=
 
-" set column line at 80
-set colorcolumn=101
-
+" new nvim defaults to dark
+set bg=light
 
 """ vim-fugitive
 " Make diffs vertical for vim-fugitive
@@ -88,9 +91,6 @@ filetype plugin on
 
 " Puts a space after the comment
 let g:NERDSpaceDelims = 1
-
-" Keybinding for comment - TODO: make this better?
-map <C-c> \c<space>
 
 
 """ Buffergator
@@ -240,7 +240,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 nmap <leader>h :nohlsearch<cr>
 
 " lots of very specific highlighting color changes
-hi Search cterm=reverse ctermbg=0 guibg=NONE
+hi IncSearch cterm=bold,underline ctermbg=NONE guibg=NONE
+hi Search cterm=bold,underline ctermbg=NONE guibg=NONE
+hi ColorColumn cterm=bold ctermbg=NONE guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
 hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
