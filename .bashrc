@@ -18,6 +18,8 @@ alias vim='nvim'
 alias ls='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
 
+alias be='bundle exec '
+
 alias dco='docker-compose '
 alias dcof='docker-compose -f $HOME/Documents/StellaService/connect-stack/docker-compose.yml'
 
@@ -58,12 +60,11 @@ export PROMPT_COMMAND=$PROMPT_COMMAND'$( [ -n $TMUX ] && tmux rename-session $(t
 GIT_PROMPT_START="\[\033[1;034m\]\n \[\033[1;035m\]\u\[\033[1;034m\]@\[\033[1;036m\]\h \[\033[1;034m\]in \[\033[1;039m\]\w\[\033[0m\]"
 GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[\033[0m\]  \[\033[32m\]\@\[\033[0m\]  "
 
-
 source ~/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
 
 source /usr/share/chruby/chruby.sh
-chruby ruby-2.5.3
+chruby ruby-2.6.0
 source /usr/share/chruby/auto.sh
 
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
