@@ -39,6 +39,8 @@ set smartindent
 " Show tabs and trailing spaces
 set listchars=tab:>-,trail:.
 set list!
+" Change trailing file vim ~ into blank character
+set fcs=eob:\ 
 
 " Allow buffer switching without saving them
 set hidden
