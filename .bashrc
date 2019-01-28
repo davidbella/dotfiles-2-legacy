@@ -25,6 +25,17 @@ alias dcof='docker-compose -f $HOME/Documents/StellaService/connect-stack/docker
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Scripts
+#
+# runs docker-compose s.t. the user is mirrored for my host machine's user
+# ensures that files created in docker are permissioned as $USER
+dcome() {
+  docker-compose "$1" -u $(id -u):$(id -g) "${@:2}"
+}
+dcofme() {
+  dcof "$1" -u $(id -u):$(id -g) "${@:2}"
+}
+
 contains () {
   local e match="$1"
   shift
