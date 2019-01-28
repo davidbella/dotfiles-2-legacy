@@ -9,17 +9,17 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #171717
+background = #3a3a3a
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dbcba2
+foreground = #d0d0d0
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-green = #98971a
-red = #cc241d
+green = #5f865f
+red = #d68787
 
 [bar/example]
 monitor = ${env:MONITOR:}
