@@ -15,6 +15,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mileszs/ack.vim'
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 
@@ -202,6 +205,34 @@ endfunction
 
 " Find the alternate file for the current path and open it
 nnoremap <leader>a :call AltCommand(expand('%'), ':e')<cr>
+
+" Writing mode
+let g:limelight_conceal_ctermfg = 'gray'
+
+function! s:goyo_enter()
+  set noshowmode
+  set noshowcmd
+  set scrolloff=25
+  set textwidth=100
+  set linespace=7
+
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  set showmode
+  set showcmd
+  set scrolloff=0
+  set textwidth=0
+  set linespace=0
+
+  set bg=light
+
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " leader-h to clear highlights
 nmap <leader>h :nohlsearch<cr>
