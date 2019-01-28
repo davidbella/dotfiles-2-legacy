@@ -10,6 +10,8 @@ settings:
       wq: quit --save
   auto_save.session:
     global: true
+  backend:
+    global: webengine
   bindings.key_mappings:
     global:
       <Ctrl-6>: <Ctrl-^>
@@ -21,19 +23,21 @@ settings:
       <Shift-Enter>: <Return>
       <Shift-Return>: <Return>
   fonts.statusbar:
-    global: 14pt monospace
+    global: 12pt M+ 1m Regular
   fonts.tabs:
     global: 14pt monospace
   hints.uppercase:
-    global: true
+    global: 12pt M+ 1m Regular
+  qt.force_software_rendering:
+    global: software-opengl
   scrolling.bar:
-    global: true
+    global: when-searching
   scrolling.smooth:
     global: false
   statusbar.position:
     global: top
   tabs.last_close:
-    global: blank
+    global: startpage
   tabs.position:
     global: top
   tabs.show:
