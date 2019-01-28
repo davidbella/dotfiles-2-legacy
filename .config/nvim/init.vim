@@ -49,6 +49,9 @@ set hidden
 set ignorecase
 set smartcase
 
+" Set maximum length of syntax highlighting to be lower
+" and highlight in red when we run over
+set synmaxcol=80
 let &colorcolumn=join(range(81,999),",")
 
 let mapleader = ","
@@ -242,7 +245,7 @@ nmap <leader>h :nohlsearch<cr>
 " lots of very specific highlighting color changes
 hi IncSearch cterm=bold,underline ctermbg=NONE guibg=NONE
 hi Search cterm=bold,underline ctermbg=NONE guibg=NONE
-hi ColorColumn cterm=bold ctermbg=NONE guibg=NONE
+hi ColorColumn cterm=bold ctermfg=1 ctermbg=NONE guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
 hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
