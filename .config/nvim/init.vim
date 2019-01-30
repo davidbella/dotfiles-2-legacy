@@ -23,7 +23,7 @@ call plug#end()
 
 """ General VIM settings
 set number
-set numberwidth=5
+set numberwidth=10
 
 " >> and << move over by 2
 set shiftwidth=2
