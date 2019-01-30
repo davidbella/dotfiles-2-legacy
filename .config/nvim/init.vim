@@ -23,6 +23,7 @@ call plug#end()
 
 """ General VIM settings
 set number
+set numberwidth=5
 
 " >> and << move over by 2
 set shiftwidth=2
@@ -41,6 +42,7 @@ set listchars=tab:>-,trail:.
 set list!
 " Change trailing file vim ~ into blank character
 set fcs=eob:\ 
+set fillchars+=vert:\ 
 
 " Allow buffer switching without saving them
 set hidden
@@ -69,6 +71,7 @@ set bg=light
 " Make diffs vertical for vim-fugitive
 set diffopt+=vertical
 
+set scrolloff=5
 
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
@@ -82,7 +85,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeWinSize=30
 
 " Hide cursorline in NERDTree
-" let NERDTreeHighlightCursorline=0
+let NERDTreeHighlightCursorline=0
 
 " Binding to locate current file in NERDTree
 map <leader>l :NERDTreeFind<cr>
@@ -227,7 +230,7 @@ endfunction
 function! s:goyo_leave()
   set showmode
   set showcmd
-  set scrolloff=0
+  set scrolloff=5
   set textwidth=0
   set linespace=0
 
@@ -243,8 +246,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 nmap <leader>h :nohlsearch<cr>
 
 " lots of very specific highlighting color changes
-hi IncSearch cterm=bold,underline ctermbg=NONE guibg=NONE
-hi Search cterm=bold,underline ctermbg=NONE guibg=NONE
+hi IncSearch cterm=bold,reverse ctermbg=NONE guibg=NONE
+hi Search cterm=bold,reverse ctermbg=NONE guibg=NONE
 hi ColorColumn cterm=bold ctermfg=1 ctermbg=NONE guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
 hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
@@ -255,3 +258,17 @@ hi MatchParen cterm=underline ctermbg=NONE guibg=NONE
 hi SpellCap cterm=underline ctermbg=NONE guibg=NONE
 hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
 hi Folded cterm=underline ctermfg=1 ctermbg=NONE
+hi VertSplit cterm=NONE gui=NONE
+hi StatusLine cterm=bold gui=NONE
+hi StatusLineNC cterm=NONE gui=NONE
+
+hi Statement ctermfg=7 cterm=italic
+hi Identifier ctermfg=7
+hi Type ctermfg=3
+hi PreProc ctermfg=7
+hi Constant ctermfg=7
+hi Comment ctermfg=4 cterm=italic
+hi Special ctermfg=7
+hi SpecialKey ctermfg=7
+hi Directory ctermfg=4
+hi Title ctermfg=7
