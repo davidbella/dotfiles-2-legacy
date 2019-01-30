@@ -267,12 +267,12 @@ hi StatusLine cterm=bold gui=NONE
 hi StatusLineNC cterm=NONE ctermbg=237 ctermfg=237 gui=NONE
 
 hi Statement ctermfg=7 cterm=italic
-hi Identifier ctermfg=7
-hi Type ctermfg=3
-hi PreProc ctermfg=7
-hi Constant ctermfg=7
+hi Identifier ctermfg=7 cterm=bold
+hi Type ctermfg=7 cterm=bold
+hi PreProc ctermfg=7 cterm=bold
+hi Constant ctermfg=6 cterm=italic
 hi Comment ctermfg=4 cterm=italic
-hi Special ctermfg=7
-hi SpecialKey ctermfg=7
-hi Directory ctermfg=4
-hi Title ctermfg=7
+hi Special ctermfg=7 cterm=bold
+hi SpecialKey ctermfg=7 cterm=bold
+hi Directory ctermfg=4 cterm=bold
+hi Title ctermfg=7 cterm=bold
