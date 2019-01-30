@@ -18,8 +18,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-green = #5f865f
-red = #d68787
+green = #d8af5f
+red = #cc241d
 
 [bar/example]
 monitor = ${env:MONITOR:}

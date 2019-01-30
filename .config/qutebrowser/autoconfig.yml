@@ -27,7 +27,7 @@ settings:
   fonts.tabs:
     global: 14pt monospace
   hints.uppercase:
-    global: 12pt M+ 1m Regular
+    global: false
   qt.force_software_rendering:
     global: software-opengl
   scrolling.bar:

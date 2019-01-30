@@ -23,7 +23,7 @@ call plug#end()
 
 """ General VIM settings
 set number
-set numberwidth=10
+set numberwidth=5
 
 " >> and << move over by 2
 set shiftwidth=2
@@ -53,8 +53,8 @@ set smartcase
 
 " Set maximum length of syntax highlighting to be lower
 " and highlight in red when we run over
-set synmaxcol=80
-let &colorcolumn=join(range(81,999),",")
+set synmaxcol=200
+" let &colorcolumn=join(range(81,999),",")
 
 let mapleader = ","
 
@@ -86,6 +86,10 @@ let NERDTreeWinSize=30
 
 " Hide cursorline in NERDTree
 let NERDTreeHighlightCursorline=0
+
+" Customize NERDTree statusline
+" This doesn't work, so I set the bg == fg
+let g:NERDTreeStatusLine = '%#NonText#'
 
 " Binding to locate current file in NERDTree
 map <leader>l :NERDTreeFind<cr>
@@ -248,7 +252,7 @@ nmap <leader>h :nohlsearch<cr>
 " lots of very specific highlighting color changes
 hi IncSearch cterm=bold,reverse ctermbg=NONE guibg=NONE
 hi Search cterm=bold,reverse ctermbg=NONE guibg=NONE
-hi ColorColumn cterm=bold ctermfg=1 ctermbg=NONE guibg=NONE
+" hi ColorColumn cterm=bold ctermfg=1 ctermbg=NONE guibg=NONE
 hi Visual cterm=bold ctermbg=NONE guibg=NONE
 hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
@@ -260,7 +264,7 @@ hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
 hi Folded cterm=underline ctermfg=1 ctermbg=NONE
 hi VertSplit cterm=NONE gui=NONE
 hi StatusLine cterm=bold gui=NONE
-hi StatusLineNC cterm=NONE gui=NONE
+hi StatusLineNC cterm=NONE ctermbg=237 ctermfg=237 gui=NONE
 
 hi Statement ctermfg=7 cterm=italic
 hi Identifier ctermfg=7
