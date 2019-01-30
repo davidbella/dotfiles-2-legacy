@@ -1,0 +1,28 @@
+[global_config]
+[keybindings]
+  paste = <Primary>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    copy_on_selection = True
+    cursor_blink = False
+    cursor_color = "#d0d0d0"
+    cursor_shape = underline
+    font = M+ 1mn 12
+    icon_bell = False
+    background_color = "#3a3a3a"
+    foreground_color = "#d0d0d0"
+    background_type = "transparent"
+    background_darkness = 0.92
+    palette = "#4e4e4e:#d68787:#5f865f:#d8af5f:#85add4:#d7afaf:#87afaf:#d0d0d0:#626262:#d75f87:#87af87:#ffd787:#add4fb:#ffafaf:#87d7d7:#e4e4e4"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
