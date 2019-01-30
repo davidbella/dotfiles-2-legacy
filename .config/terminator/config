@@ -1,4 +1,7 @@
 [global_config]
+  inactive_color_offset = 1.0
+  title_inactive_bg_color = "#d0d0d0"
+  title_inactive_fg_color = "#d0d0d0"
 [keybindings]
   paste = <Primary>v
 [layouts]
@@ -12,16 +15,16 @@
 [plugins]
 [profiles]
   [[default]]
+    background_color = "#3a3a3a"
+    background_darkness = 0.92
+    background_type = transparent
     copy_on_selection = True
     cursor_blink = False
     cursor_color = "#d0d0d0"
     cursor_shape = underline
     font = M+ 1mn 12
-    icon_bell = False
-    background_color = "#3a3a3a"
     foreground_color = "#d0d0d0"
-    background_type = "transparent"
-    background_darkness = 0.92
+    icon_bell = False
     palette = "#4e4e4e:#d68787:#5f865f:#d8af5f:#85add4:#d7afaf:#87afaf:#d0d0d0:#626262:#d75f87:#87af87:#ffd787:#add4fb:#ffafaf:#87d7d7:#e4e4e4"
     scrollbar_position = hidden
     show_titlebar = False
