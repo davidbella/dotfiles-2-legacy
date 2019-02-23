@@ -25,6 +25,10 @@ alias dcof='docker-compose -f $HOME/Documents/StellaService/connect-stack/docker
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# shows changed and untracked files in git
+# useful for `vim $(gcf)`
+alias gcf='git status -s | sed -e "s?^\s??" | cut -d" " -f2'
+
 # Scripts
 #
 # runs docker-compose s.t. the user is mirrored for my host machine's user
