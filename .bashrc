@@ -46,27 +46,39 @@ contains () {
 tmux_session_name () {
   directory_name="$(pwd | rev | cut -d"/" -f1 | rev)"
 
-  array=(`tmux list-sessions | cut -d":" -f1` $USER "openvpn")
+  case "$directory_name" in
+    $(echo $USER))
+      array=(`tmux list-sessions | cut -d":" -f1` "openvpn")
 
-  if [[ ${array[@]} =~ $directory_name ]]; then
-    echo "$(tmux display-message -p '#S')"
-  else
-    case "$directory_name" in
-      $(echo $USER))
+      if [[ ${array[@]} =~ $directory_name ]]; then
+        echo "$(tmux display-message -p '#S')"
+      else
         echo "__home"
-        ;;
-      openvpn)
+      fi
+      ;;
+    openvpn)
+      array=(`tmux list-sessions | cut -d":" -f1` $USER)
+
+      if [[ ${array[@]} =~ $directory_name ]]; then
+        echo "$(tmux display-message -p '#S')"
+      else
         echo "_priv"
-        ;;
-      *)
+      fi
+      ;;
+    *)
+      array=(`tmux list-sessions | cut -d":" -f1` $USER "openvpn")
+
+      if [[ ${array[@]} =~ $directory_name ]]; then
+        echo "$(tmux display-message -p '#S')"
+      else
         echo "$directory_name"
-        ;;
-    esac
-  fi
+      fi
+      ;;
+  esac
 }
 
-export PROMPT_COMMAND=$PROMPT_COMMAND'$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
-export PROMPT_COMMAND=$PROMPT_COMMAND'$( [ -n $TMUX ] && tmux rename-session $(tmux_session_name))'
+export PROMPT_COMMAND='$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
+export PROMPT_COMMAND='$( [ -n $TMUX ] && tmux rename-session $(tmux_session_name) 2>/dev/null)'
 
 GIT_PROMPT_START="\[\033[1;034m\]\n \[\033[1;035m\]\u\[\033[1;034m\]@\[\033[1;036m\]\h \[\033[1;034m\]in \[\033[1;039m\]\w\[\033[0m\]"
 GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[\033[0m\]  \[\033[32m\]\@\[\033[0m\]  "
