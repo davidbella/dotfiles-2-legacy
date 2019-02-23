@@ -73,6 +73,38 @@ set diffopt+=vertical
 
 set scrolloff=5
 
+""" Statusline
+" function! GitBranch()
+  " return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+" endfunction
+
+" function! StatuslineGit()
+  " let l:branchname = GitBranch()
+  " return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+" endfunction
+
+" set statusline=
+" set statusline+=%#PmenuSel#
+" set statusline+=%{StatuslineGit()}
+" set statusline+=%#LineNr#
+" set statusline+=\ %f
+" set statusline+=%m\
+" set statusline+=%=
+" set statusline+=%#PmenuSel#
+" set statusline+=\ %y
+" set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+" set statusline+=\[%{&fileformat}\]
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=%m
+" set statusline+=\ %r
+" set statusline+=\ %q
+" set statusline+=\ %{FugitiveStatusline()}
+set statusline+=\ %f
+set statusline+=\ %c
+" set statusline+=\ %l/%L
+" set statusline+=\ (%p%%)
+
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
 autocmd vimenter * NERDTree
@@ -88,8 +120,10 @@ let NERDTreeWinSize=30
 let NERDTreeHighlightCursorline=0
 
 " Customize NERDTree statusline
-" This doesn't work, so I set the bg == fg
-let g:NERDTreeStatusLine = '%#NonText#'
+" current file highlighted
+" let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+" Nothing
+let NERDTreeStatusline="\ "
 
 " Binding to locate current file in NERDTree
 map <leader>l :NERDTreeFind<cr>
@@ -263,8 +297,12 @@ hi SpellCap cterm=underline ctermbg=NONE guibg=NONE
 hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
 hi Folded cterm=underline ctermfg=1 ctermbg=NONE
 hi VertSplit cterm=NONE gui=NONE
-hi StatusLine cterm=bold gui=NONE
-hi StatusLineNC cterm=NONE ctermbg=237 ctermfg=237 gui=NONE
+hi StatusLine cterm=bold
+hi StatusLineNC cterm=NONE ctermbg=237 ctermfg=237
+
+hi NeomakeError ctermfg=1
+hi NeomakeWarning ctermfg=1
+hi NeomakeWarningSign ctermfg=3
 
 hi Statement ctermfg=7 cterm=italic
 hi Identifier ctermfg=7 cterm=bold
