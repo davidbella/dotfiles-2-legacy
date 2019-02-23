@@ -34,6 +34,8 @@ settings:
     global: when-searching
   scrolling.smooth:
     global: false
+  statusbar.hide:
+    global: true
   statusbar.position:
     global: top
   tabs.last_close:
@@ -42,3 +44,5 @@ settings:
     global: top
   tabs.show:
     global: always
+  zoom.default:
+    global: 125%
