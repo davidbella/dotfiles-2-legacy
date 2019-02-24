@@ -52,7 +52,7 @@ font-2 = "icons:pixelsize=16;3"
 
 modules-left = i3
 modules-center = date
-modules-right = volume volume2 volume3 wlan eth filesystem memory cpu temperature battery powermenu
+modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -253,70 +253,6 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 format-muted-underline = ${colors.foreground-alt}
 label-muted = M mute
-
-bar-volume-width = 8
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = x
-bar-volume-indicator-font = 2
-bar-volume-fill = x
-bar-volume-fill-font = 2
-bar-volume-empty = -
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/volume2]
-type = internal/volume
-
-format-volume = <label-volume> <bar-volume>
-format-volume-underline = ${colors.green}
-label-volume = H
-label-volume-foreground = ${root.foreground}
-
-master-mixer = Headphone
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-format-muted-underline = ${colors.foreground-alt}
-label-muted = mute
-
-bar-volume-width = 8
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
-bar-volume-indicator = x
-bar-volume-indicator-font = 2
-bar-volume-fill = x
-bar-volume-fill-font = 2
-bar-volume-empty = -
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/volume3]
-type = internal/volume
-
-format-volume = <label-volume> <bar-volume>
-format-volume-underline = ${colors.green}
-label-volume = S
-label-volume-foreground = ${root.foreground}
-
-master-mixer = Speaker
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-format-muted-underline = ${colors.foreground-alt}
-label-muted = S mute
 
 bar-volume-width = 8
 bar-volume-foreground-0 = #55aa55
