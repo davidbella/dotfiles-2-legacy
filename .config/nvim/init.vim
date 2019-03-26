@@ -215,6 +215,7 @@ let g:neomake_javascript_eslint_maker = {
       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#'
       \ }
 
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 
 let g:neomake_ruby_rubocop_maker = {
       \ 'args': ['--format', 'emacs', '--force-exclusion', '--display-cop-names'],
