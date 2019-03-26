@@ -299,7 +299,7 @@ hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
 hi Folded cterm=underline ctermfg=1 ctermbg=NONE
 hi VertSplit cterm=NONE gui=NONE
 hi StatusLine cterm=bold
-hi StatusLineNC cterm=NONE ctermbg=237 ctermfg=237
+hi StatusLineNC cterm=NONE
 
 hi NeomakeError ctermfg=1
 hi NeomakeWarning ctermfg=1
