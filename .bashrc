@@ -48,37 +48,40 @@ contains () {
 }
 
 tmux_session_name () {
-  directory_name="$(pwd | rev | cut -d"/" -f1 | rev)"
+  if pgrep tmux > /dev/null
+  then
+    directory_name="$(pwd | rev | cut -d"/" -f1 | rev)"
 
-  case "$directory_name" in
-    $(echo $USER))
-      array=(`tmux list-sessions | cut -d":" -f1` "openvpn")
+    case "$directory_name" in
+      $(echo $USER))
+        array=(`tmux list-sessions | cut -d":" -f1` "openvpn")
 
-      if [[ ${array[@]} =~ $directory_name ]]; then
-        echo "$(tmux display-message -p '#S')"
-      else
-        echo "__home"
-      fi
-      ;;
-    openvpn)
-      array=(`tmux list-sessions | cut -d":" -f1` $USER)
+        if [[ ${array[@]} =~ $directory_name ]]; then
+          echo "$(tmux display-message -p '#S')"
+        else
+          echo "__home"
+        fi
+        ;;
+      openvpn)
+        array=(`tmux list-sessions | cut -d":" -f1` $USER)
 
-      if [[ ${array[@]} =~ $directory_name ]]; then
-        echo "$(tmux display-message -p '#S')"
-      else
-        echo "_priv"
-      fi
-      ;;
-    *)
-      array=(`tmux list-sessions | cut -d":" -f1` $USER "openvpn")
+        if [[ ${array[@]} =~ $directory_name ]]; then
+          echo "$(tmux display-message -p '#S')"
+        else
+          echo "_priv"
+        fi
+        ;;
+      *)
+        array=(`tmux list-sessions | cut -d":" -f1` $USER "openvpn")
 
-      if [[ ${array[@]} =~ $directory_name ]]; then
-        echo "$(tmux display-message -p '#S')"
-      else
-        echo "$directory_name"
-      fi
-      ;;
-  esac
+        if [[ ${array[@]} =~ $directory_name ]]; then
+          echo "$(tmux display-message -p '#S')"
+        else
+          echo "$directory_name"
+        fi
+        ;;
+    esac
+  fi
 }
 
 export PROMPT_COMMAND='$( [ -n $TMUX ] && tmux setenv -g TMUX_PWD_$(tmux display -p "#D" | tr -d %) $PWD)'
