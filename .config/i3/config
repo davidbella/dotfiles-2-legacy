@@ -168,6 +168,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec allow_rgb10_configs=false compton -b --config $HOME/.config/compton/compton.conf
-exec --no-startup-id feh --bg-scale $HOME/.config/backgrounds/galaxy.jpg
+exec --no-startup-id feh --bg-fill $HOME/.config/backgrounds/galaxy.jpg
 exec --no-startup-id redshiftgui --no-gui
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
