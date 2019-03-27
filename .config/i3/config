@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-new_window none
+new_window pixel 2
 
 set $mod Mod1
 
@@ -168,6 +168,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec allow_rgb10_configs=false compton -b --config $HOME/.config/compton/compton.conf
-exec --no-startup-id feh --bg-scale $HOME/.config/backgrounds/flowers.jpg
+exec --no-startup-id feh --bg-scale $HOME/.config/backgrounds/galaxy.jpg
 exec --no-startup-id redshiftgui --no-gui
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
