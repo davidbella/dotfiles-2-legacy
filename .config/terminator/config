@@ -15,16 +15,16 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#000000"
     background_darkness = 0.92
     background_type = transparent
     copy_on_selection = True
     cursor_blink = False
-    cursor_color = "#d0d0d0"
-    font = M+ 1mn 12
-    foreground_color = "#d0d0d0"
+    font = Iosevka 12
     icon_bell = False
-    palette = "#4e4e4e:#d68787:#5f865f:#d8af5f:#85add4:#d7afaf:#87afaf:#d0d0d0:#626262:#d75f87:#87af87:#ffd787:#add4fb:#ffafaf:#87d7d7:#e4e4e4"
+    palette = "#000000:#160f0d:#2c211e:#493834:#6e5651:#9b7b73:#c5a9a2:#e9e1df:#aaaaf4:#b6b643:#559f78:#57aab5:#2ec2d2:#35d18d:#f8b09b:#63b98d"
+    foreground_color = "#e9e1df"
+    background_color = "#000000"
+    cursor_color = "#e9e1df"
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
