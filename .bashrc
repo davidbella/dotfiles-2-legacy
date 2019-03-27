@@ -40,6 +40,10 @@ dcofme() {
   dcof "$1" -u $(id -u):$(id -g) "${@:2}"
 }
 
+dockerme() {
+  docker run --rm --name "$1" -p 5432:5432 -d postgres
+}
+
 contains () {
   local e match="$1"
   shift
@@ -101,3 +105,5 @@ source /usr/share/chruby/auto.sh
 
 # bash snippet to install yarn dependencies without installing yarn
 alias dockeryarn='docker run --rm -it -v $(pwd):/app -w /app node yarn'
+
+alias dockerpsql='docker run --rm --name $(echo $(pwd | rev | cut -d"/" -f 1 | rev)) -p 5432:5432 -d postgres'
