@@ -260,7 +260,7 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=25
-  set textwidth=100
+  set textwidth=80
   set linespace=7
 
   Limelight
