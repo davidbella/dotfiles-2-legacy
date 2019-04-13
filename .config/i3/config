@@ -9,12 +9,12 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-new_window pixel 2
+new_window pixel 0
 
 set $mod Mod1
 
-gaps inner 10
-gaps outer 10
+gaps inner 0
+gaps outer 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -25,11 +25,10 @@ font pango:M+ 1m Regular 14
 # client.unfocused        #000000 #000000 #000000 #000000
 # client.urgent           #000000 #000000 #000000 #000000
 
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #bbbbbb #bbbbbb #bbbbbb #bbbbbb   #bbbbbb
+client.focused_inactive #000000 #000000 #000000 #000000   #000000
+client.unfocused        #000000 #000000 #000000 #000000   #222222
+client.urgent           #ff0000 #ff0000 #ff0000 #ff0000   #ff0000
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -167,7 +166,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec allow_rgb10_configs=false compton -b --config $HOME/.config/compton/compton.conf
-exec --no-startup-id feh --bg-fill $HOME/.config/backgrounds/galaxy.jpg
+# exec allow_rgb10_configs=false compton -b --config $HOME/.config/compton/compton.conf
+# exec --no-startup-id feh --bg-fill $HOME/.config/backgrounds/galaxy.jpg
+exec --no-startup-id xsetroot -solid "#000000"
 exec --no-startup-id redshiftgui --no-gui
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

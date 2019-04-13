@@ -9,17 +9,17 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000000
-background-alt = #444
+background = #070707
+background-alt = #131313
 ;foreground = ${xrdb:color7:#222}
 foreground = #d0d0d0
-foreground-alt = #555
+foreground-alt = #131313
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-green = #d8af5f
-red = #cc241d
+green = #ffffff
+red = #ffffff
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -29,6 +29,8 @@ height = 27
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
+
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -50,9 +52,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "icons:pixelsize=16;3"
 ;set these up!
 
-modules-left = i3
-modules-center = date
-modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
+;modules-left = i3
+modules-center = i3
+;modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
