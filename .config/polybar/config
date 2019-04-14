@@ -13,13 +13,13 @@ background = #070707
 background-alt = #131313
 ;foreground = ${xrdb:color7:#222}
 foreground = #d0d0d0
-foreground-alt = #131313
+foreground-alt = #d0d0d0
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-green = #ffffff
-red = #ffffff
+green = #d0d0d0
+red = #d0d0d0
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -30,7 +30,7 @@ height = 27
 radius = 0.0
 fixed-center = true
 
-bottom = true
+;bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -52,9 +52,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "icons:pixelsize=16;3"
 ;set these up!
 
-;modules-left = i3
-modules-center = i3
-;modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
+modules-left = i3
+modules-center = date
+modules-right = volume wlan eth filesystem memory cpu temperature battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -127,7 +127,7 @@ label-focused-padding = ${module/bspwm.label-focused-padding}
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-label-unfocused-underline = ${colors.foreground-alt}
+label-unfocused-underline = ${colors.background-alt}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
@@ -232,8 +232,8 @@ interval = 1
 date = "%F"
 date-alt = "%F"
 
-time = "%A %R"
-time-alt = "%A %R"
+time = "%A %r"
+time-alt = "%A %r"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}

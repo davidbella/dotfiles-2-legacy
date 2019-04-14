@@ -59,7 +59,11 @@ set synmaxcol=200
 let mapleader = ","
 
 " leader-c to copy current file name into clipboard buffer
-nmap <leader>c :let @+ = expand("%")<cr>
+map <leader>c :let @+ = expand("%")<cr>
+
+" leader-d/D to close buffers
+map <leader>d :bd<cr>
+map <leader>D :bufdo bd<cr>
 
 " disables nvim from setting a guicursor (keeps terminal settings cursor)
 set guicursor=
@@ -107,14 +111,17 @@ set statusline+=\ %c
 
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd p
+" autocmd vimenter * NERDTree
+" autocmd vimenter * wincmd p
 
 " Automagically close NERDTree if it is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Keep NERDTree closed after opening a file
+let NERDTreeQuitOnOpen=1
+
 " Adjust NERDTree window size
-let NERDTreeWinSize=30
+let NERDTreeWinSize=80
 
 " Hide cursorline in NERDTree
 let NERDTreeHighlightCursorline=0
@@ -139,14 +146,15 @@ let g:NERDSpaceDelims = 1
 
 """ Buffergator
 " Have Buffergator open from the right and make it bigger
-let buffergator_viewport_split_policy="R"
+let buffergator_viewport_split_policy="L"
 let buffergator_split_size=80
 
 " Show relative path instead of absolute path
-let buffergator_show_full_directory_path=0
+let buffergator_show_full_directory_path=1
 
 " Sort by full filepath, alphabetically
-let buffergator_sort_regime="filepath"
+let g:buffergator_sort_regime="filepath"
+let g:buffergator_display_regime="parentdir"
 
 
 """ CtrlP
@@ -158,7 +166,7 @@ let buffergator_sort_regime="filepath"
 " set wildignore+=*/tmp/*
 " let g:ctrlp_custom_ignore = 'node_modules\|tmp'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|node_modules\|public\/assets\|tmp\|_build',
+  \ 'dir':  '\.git$\|node_modules\|public\/assets\|tmp\|_build\|deps',
   \ }
 
 " use OS `find`
@@ -282,7 +290,7 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " leader-h to clear highlights
-nmap <leader>h :nohlsearch<cr>
+map <leader>h :nohlsearch<cr>
 
 " lots of very specific highlighting color changes
 hi IncSearch cterm=bold,reverse ctermbg=NONE guibg=NONE
@@ -305,13 +313,13 @@ hi NeomakeError ctermfg=1
 hi NeomakeWarning ctermfg=1
 hi NeomakeWarningSign ctermfg=3
 
-hi Statement ctermfg=7 cterm=italic
-hi Identifier ctermfg=7 cterm=bold
-hi Type ctermfg=7 cterm=bold
-hi PreProc ctermfg=7 cterm=bold
+hi Statement ctermfg=2 cterm=italic
+hi Identifier ctermfg=2 cterm=bold
+hi Type ctermfg=2 cterm=bold
+hi PreProc ctermfg=2 cterm=bold
 hi Constant ctermfg=6 cterm=italic
 hi Comment ctermfg=4 cterm=italic
-hi Special ctermfg=7 cterm=bold
-hi SpecialKey ctermfg=7 cterm=bold
+hi Special ctermfg=2 cterm=bold
+hi SpecialKey ctermfg=2 cterm=bold
 hi Directory ctermfg=4 cterm=bold
-hi Title ctermfg=7 cterm=bold
+hi Title ctermfg=2 cterm=bold
