@@ -313,13 +313,13 @@ hi NeomakeError ctermfg=1
 hi NeomakeWarning ctermfg=1
 hi NeomakeWarningSign ctermfg=3
 
-hi Statement ctermfg=2 cterm=italic
-hi Identifier ctermfg=2 cterm=bold
+hi Statement ctermfg=2
+hi Identifier ctermfg=2
 hi Type ctermfg=2 cterm=bold
-hi PreProc ctermfg=2 cterm=bold
-hi Constant ctermfg=6 cterm=italic
+hi PreProc ctermfg=2
+hi Constant ctermfg=6
 hi Comment ctermfg=4 cterm=italic
-hi Special ctermfg=2 cterm=bold
-hi SpecialKey ctermfg=2 cterm=bold
-hi Directory ctermfg=4 cterm=bold
-hi Title ctermfg=2 cterm=bold
+hi Special ctermfg=2
+hi SpecialKey ctermfg=2
+hi Directory ctermfg=4
+hi Title ctermfg=2
