@@ -40,8 +40,12 @@ dcofme() {
   dcof "$1" -u $(id -u):$(id -g) "${@:2}"
 }
 
-dockerme() {
-  docker run --rm --name "$1" -p 5432:5432 -d postgres
+pgme() {
+  docker run --rm --name postgres -p 5432:5432 -d postgres
+}
+
+redisme() {
+  docker run --rm --name redis -p 6379:6379 -d redis
 }
 
 contains () {
