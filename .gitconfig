@@ -1,17 +1,17 @@
 [alias]
-	st = status
-	co = checkout
-	lg = log --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)%<(20)%an-%Creset %Cgreen%<(15)%cr%Creset- %s%C(yellow)%d%Creset' --abbrev-commit -25
+  st = status
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)%<(20)%an-%Creset %Cgreen%<(15)%cr%Creset- %s%C(yellow)%d%Creset' --abbrev-commit -25
   fpush = push -f
   lpush = push --force-with-lease
-	h = log --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)%<(20)%an-%Creset %Cgreen%<(15)%cr%Creset- %s%C(yellow)%d%Creset' --abbrev-commit -1
+  h = log --graph --pretty=format:'%Cred%h%Creset - %C(bold blue)%<(20)%an-%Creset %Cgreen%<(15)%cr%Creset- %s%C(yellow)%d%Creset' --abbrev-commit -1
 
 [user]
-	name = David Bella
-	email = davidhbella@gmail.com
+  name = David Bella
+  email = davidhbella@gmail.com
 
 [core]
-	editor = nvim
+  editor = nvim
 
 [branch]
   sort = authordate
