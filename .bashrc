@@ -23,6 +23,9 @@ alias lsdr='ls -lthr --color=auto'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+alias todo='grep "\[ \]" $HOME/Documents/MyDocuments/**/TODO.yml -RI | grep -v Manual | cut -d"/" -f6-8 | sed -e "s?\/.*\[? [?" | sed -e "s?\"\$??" '
+alias onetodo='todo | shuf | head -1'
+
 ### Can I do this kind of stuff more generally? Or extract this?
 # Docker
 pgme() {
@@ -51,3 +54,8 @@ source /usr/share/chruby/chruby.sh
 chruby ruby-2.7.1
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+source /usr/share/nvm/init-nvm.sh
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+export EDITOR=nvim

@@ -51,13 +51,13 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = dina:pixelsize=12;1
+font-0 = Iosevka:pixelsize=18;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = date
-modules-right = cpu memory
+modules-right = wlan filesystem cpu memory battery
 
 tray-position = right
 tray-padding = 2
@@ -102,8 +102,9 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = "%{F#0a81f5}%mountpoint%%{F-}: %percentage_used%% / %total%     "
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -245,14 +246,14 @@ ramp-used-4-background = #ac4344
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp58s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected =
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
+format-disconnected = RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -359,15 +360,19 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
+format-charging-prefix = "bat+ "
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-foreground = #fff
+format-charging-underline =
 
+format-discharging-prefix = "bat "
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-foreground = #fff
+format-discharging-underline =
 
-format-full-prefix = " "
+format-full-prefix = "bat "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

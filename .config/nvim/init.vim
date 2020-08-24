@@ -2,6 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'elixir-lang/vim-elixir'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'rhysd/vim-crystal'
+Plug 'elmcast/elm-vim'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -18,8 +19,17 @@ Plug 'mileszs/ack.vim'
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+Plug 'SirVer/ultisnips'
 call plug#end()
 
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<C-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 """ General VIM settings
 set number
@@ -189,6 +199,10 @@ endif
 " Autorun Neomake on file save
 autocmd! BufWritePost * Neomake
 
+" A workaround for Phoenix code reloading
+" https://elixirforum.com/t/vim-interfering-with-phoenix-recompile-after-saving/10039/20
+let $MIX_ENV = 'test'
+
 " Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
 let g:neomake_elixir_enabled_makers = ['mix', 'mycredo']
 
@@ -231,6 +245,8 @@ let g:neomake_ruby_rubocop_maker = {
       \ 'postprocess': function('neomake#makers#ft#ruby#RubocopEntryProcess')
       \ }
 
+" Display list of matching tags if more than one, credit: Thomas Wack
+noremap <C-]> g<C-]>
 
 """ ALT
 " Run a given vim command on the results of alt from a given path.

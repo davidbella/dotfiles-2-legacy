@@ -1,0 +1,11 @@
+snippet bookmark "create bookmark"
+- item: $1
+	url: `xclip -o -sel clip`
+	added: `date "+%Y%m%d %I:%M %p"`
+endsnippet
+
+snippet memory "create memory"
+- memory: $1
+	happened: YYYYMMDD HH:MM AM
+	added: `date "+%Y%m%d %I:%M %p"`
+endsnippet
