@@ -28,15 +28,16 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a '*:zathura' state=tiled
 
-feh --bg-fill $(find ~/.config/backgrounds -type f | shuf -n 1)
+# feh --bg-fill $(find ~/.config/backgrounds -type f | shuf -n 1)
+xsetroot -solid "#282c34" &
 
 .config/polybar/launch
 
 pkill conky
-conky -d -c .config/conky/sys.conf
-conky -d -c .config/conky/todo.conf
-conky -d -c .config/conky/docs.conf
-conky -d -c .config/conky/undocs.conf
+# conky -d -c .config/conky/sys.conf
+# conky -d -c .config/conky/todo.conf
+# conky -d -c .config/conky/docs.conf
+# conky -d -c .config/conky/undocs.conf
 
 pkill greenclip
 /usr/bin/greenclip daemon

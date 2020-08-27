@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000
+background = #282c34
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -43,7 +43,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 4
-border-color = #00000000
+border-color = #282c34
 
 padding-left = 0
 padding-right = 0
@@ -112,12 +112,13 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %name%
+label-focused-foreground = $fff
 label-focused-background = ${colors.background-alt}
 label-focused-underline=
 label-focused-padding = 6
 
 label-occupied = %name%
-label-occupied-foreground = ${colors.foreground-alt}
+label-occupied-foreground = $fff
 label-occupied-padding = 6
 
 label-urgent = %name%!
