@@ -1,4 +1,4 @@
-.screenlayout/perfect.sh
+# .screenlayout/external.sh
 
 xset r rate 270 48
 

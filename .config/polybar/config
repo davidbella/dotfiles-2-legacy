@@ -23,7 +23,7 @@ background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #888
-primary = #ffb52a
+primary = #ffb51a
 secondary = #e60053
 alert = #bd2c40
 
@@ -42,11 +42,17 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #282c34
 
+border-top-size = 2
+border-top-color = #666
+
+border-bottom-size = 2
+border-bottom-color = #666
+
 padding-left = 0
-padding-right = 0
+padding-right = 3
 
 module-margin-left = 1
 module-margin-right = 2
@@ -57,7 +63,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = date
-modules-right = wlan filesystem cpu memory battery
+modules-right = wlan cpu memory battery
 
 tray-position = right
 tray-padding = 2
@@ -112,13 +118,13 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %name%
-label-focused-foreground = $fff
-label-focused-background = ${colors.background-alt}
-label-focused-underline=
+label-focused-foreground = #fff
+label-focused-background = #383c44
+; label-focused-underline=
 label-focused-padding = 6
 
 label-occupied = %name%
-label-occupied-foreground = $fff
+label-occupied-foreground = #fff
 label-occupied-padding = 6
 
 label-urgent = %name%!
@@ -148,7 +154,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+; label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -158,7 +164,7 @@ label-unfocused-padding = 2
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+; label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -212,7 +218,7 @@ format = <label> <ramp-coreload>
 format-foreground = ${colors.foreground-alt}
 format-prefix = "cpu "
 format-prefix-foreground = #fff
-format-underline = ${colors.background}
+; format-underline = ${colors.background}
 label = " %percentage:2%%  "
 ramp-coreload-0 =
 ramp-coreload-0-background = #ac4344
@@ -251,7 +257,7 @@ interface = wlp58s0
 interval = 3.0
 
 format-connected =
-format-connected-underline = #9f78e1
+; format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected = RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP RIP
@@ -295,7 +301,7 @@ time-alt =
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline =
+; format-underline =
 
 label = %date%
 label-foreground = #fff
@@ -364,16 +370,16 @@ full-at = 98
 format-charging-prefix = "bat+ "
 format-charging = <animation-charging> <label-charging>
 format-charging-foreground = #fff
-format-charging-underline =
+; format-charging-underline =
 
 format-discharging-prefix = "bat "
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-foreground = #fff
-format-discharging-underline =
+; format-discharging-underline =
 
 format-full-prefix = "bat "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${colors.foreground-alt}
+; format-full-underline = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 

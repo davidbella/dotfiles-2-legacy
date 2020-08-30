@@ -7,9 +7,10 @@ bspc monitor HDMI-0 -d 6 7 8 todo web
 bspc monitor VGA-1 -d 1 2 3 4 5
 bspc monitor VGA-2 -d 6 7 8 todo web
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 todo web
+bspc monitor DP-1-1 -d 1 2 3 4 5 6 7 8 todo web
 
 bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap          22
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -29,11 +30,18 @@ bspc rule -a Screenkey manage=off
 bspc rule -a '*:zathura' state=tiled
 
 # feh --bg-fill $(find ~/.config/backgrounds -type f | shuf -n 1)
-xsetroot -solid "#282c34" &
+# hsetroot -solid "#282c34" &
+feh --bg-fill $(\ls ~/.config/backgrounds/{fuji,pixel-sea}.jpg | shuf -n 1)
 
+pkill picom
+sleep 1
+picom -I1 -O1 -l0 -t0 -b # -C
+
+pkill polybar
 .config/polybar/launch
 
 pkill conky
+# conky -d -c .config/conky/station.conf
 # conky -d -c .config/conky/sys.conf
 # conky -d -c .config/conky/todo.conf
 # conky -d -c .config/conky/docs.conf
