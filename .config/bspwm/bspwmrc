@@ -44,6 +44,7 @@ pkill conky
 # conky -d -c .config/conky/station.conf
 # conky -d -c .config/conky/sys.conf
 # conky -d -c .config/conky/todo.conf
+# conky -d -c .config/conky/todo_right.conf
 # conky -d -c .config/conky/docs.conf
 # conky -d -c .config/conky/undocs.conf
 
