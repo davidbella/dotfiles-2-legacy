@@ -9,3 +9,9 @@ snippet memory "create memory"
 	happened: YYYYMMDD HH:MM AM
 	added: `date "+%Y%m%d %I:%M %p"`
 endsnippet
+
+snippet ent
+    `date +%Y/%m/%d` ${1:transaction}
+        ${2:account}	${3:value}
+        ${4}
+endsnippet

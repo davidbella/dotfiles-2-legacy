@@ -24,9 +24,10 @@ Plug 'SirVer/ultisnips'
 call plug#end()
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-let g:UltiSnipsExpandTrigger="<C-s>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<C-s>"
+" These don't work???
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -147,12 +148,19 @@ map <leader>l :NERDTreeFind<cr>
 
 
 """ NERDCommenter
+" Create default mappings
+" Makes my filename copier (leader-c) instant
+let g:NERDCreateDefaultMappings = 0
+
 " filetype checking
 filetype plugin on
 
 " Puts a space after the comment
 let g:NERDSpaceDelims = 1
 
+" Use / and space to toggle comments
+map <leader>\ <plug>NERDCommenterToggle
+map <leader><space> <plug>NERDCommenterToggle
 
 """ Buffergator
 " Have Buffergator open from the right and make it bigger
@@ -339,3 +347,10 @@ hi Special ctermfg=2
 hi SpecialKey ctermfg=2
 hi Directory ctermfg=4
 hi Title ctermfg=2
+
+hi GitGutterAddInvisible ctermfg=NONE ctermbg=NONE
+hi GitGutterChangeInvisible ctermfg=NONE ctermbg=NONE
+hi GitGutterDeleteInvisible ctermfg=NONE ctermbg=NONE
+hi GitGutterAdd ctermfg=2 ctermbg=NONE
+hi GitGutterChange ctermfg=3 ctermbg=NONE
+hi GitGutterDelete ctermfg=1 ctermbg=NONE
