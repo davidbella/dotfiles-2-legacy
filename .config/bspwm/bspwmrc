@@ -29,13 +29,15 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a '*:zathura' state=tiled
 
-# feh --bg-fill $(find ~/.config/backgrounds -type f | shuf -n 1)
+bspc rule -a Zathura state=tiled
+
+feh --bg-fill $(find ~/.config/backgrounds -type f | shuf -n 1)
 # hsetroot -solid "#282c34" &
-feh --bg-fill $(\ls ~/.config/backgrounds/{fuji,pixel-sea}.jpg | shuf -n 1)
+# feh --bg-fill $(\ls ~/.config/backgrounds/{fuji,pixel-sea}.jpg | shuf -n 1)
 
 pkill picom
 sleep 1
-picom -I1 -O1 -l0 -t0 -b # -C
+picom --no-vsync -I1 -O1 -l0 -t0 -b # -C
 
 pkill polybar
 .config/polybar/launch

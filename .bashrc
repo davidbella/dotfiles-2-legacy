@@ -13,8 +13,13 @@ HISTFILESIZE=-1
 # Ignore and erase duplicates
 HISTCONTROL=ignoredups
 
+# BIG TECH
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Aliases
+alias sudo='sudo '
+
 alias vim='nvim'
 alias ls='ls -lh --color=auto'
 alias la='ls -lha --color=auto'
@@ -30,9 +35,11 @@ alias recent_files='find . -name code -prune -o -type f -mtime -2 -print'
 
 ### Can I do this kind of stuff more generally? Or extract this?
 # Docker
-pgme() {
-  docker run --rm --name postgres -p 5432:5432 -d postgres
-}
+# pgme() {
+  # docker run --rm --name postgres -p 5432:5432 -d postgres
+# }
+
+alias pgme='docker run --rm --name postgres -p 5432:5432 -d postgres'
 
 # rewrite this to take an arg
 alias dockerpsql='docker run --rm --name $(echo $(pwd | rev | cut -d"/" -f 1 | rev)) -p 5432:5432 -d postgres'
@@ -47,6 +54,8 @@ alias dockeryarn='docker run --rm -it -v $(pwd):/app -w /app node yarn'
 
 export PROMPT_COMMAND='$(~/prompt-command.sh)'
 
+# GIT_PROMPT_START="\n \u@\h in \w"
+# GIT_PROMPT_END="\n   \@  "
 GIT_PROMPT_START="\[\033[1;034m\]\n \[\033[1;035m\]\u\[\033[1;034m\]@\[\033[1;036m\]\h \[\033[1;034m\]in \[\033[1;039m\]\w\[\033[0m\]"
 GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[\033[0m\]  \[\033[32m\]\@\[\033[0m\]  "
 
