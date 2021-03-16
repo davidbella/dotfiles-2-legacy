@@ -21,7 +21,7 @@ then
           output=$my_documents_cwd
 
           case "$up_directory_name" in
-            ManualMD)
+            manual_md)
               output=$directory_name
               ;;
             Documents)

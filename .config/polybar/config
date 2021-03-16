@@ -45,10 +45,10 @@ line-color = #f00
 border-size = 0
 border-color = #282c34
 
-border-top-size = 2
+border-top-size = 4
 border-top-color = #666
 
-border-bottom-size = 2
+border-bottom-size = 4
 border-bottom-color = #666
 
 padding-left = 0
@@ -57,13 +57,13 @@ padding-right = 3
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka:pixelsize=18;1
+font-0 = Iosevka:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = date
-modules-right = eth wlan cpu memory battery
+modules-right = mullvad eth wlan cpu memory battery
 
 tray-position = right
 tray-padding = 2
@@ -290,6 +290,25 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/mullvad]
+type = internal/network
+interface = wg-mullvad
+interval = 3.0
+
+; format-connected-underline = #55aa55
+format-connected-prefix = "testing  "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected = <label-connected>
+label-connected = testing %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+unknown-as-up = true
 
 [module/date]
 type = internal/date

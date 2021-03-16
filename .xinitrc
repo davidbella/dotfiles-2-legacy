@@ -1,4 +1,4 @@
-# .screenlayout/external.sh
+.screenlayout/perfect-horiz.sh
 
 xset r rate 270 48
 
