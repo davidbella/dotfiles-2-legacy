@@ -3,7 +3,7 @@
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
   if [ $m == "DVI-D-0" ]
   then
-    continue
+    :
   fi
   if [ $m == "VGA-0" ]
   then
