@@ -216,7 +216,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format = <label> <ramp-coreload>
-format-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
 format-prefix = "cpu "
 format-prefix-foreground = #fff
 ; format-underline = ${colors.background}
@@ -237,7 +237,7 @@ type = internal/memory
 interval = 2
 format = <label> <ramp-used>
 format-prefix = "mem "
-format-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
 format-prefix-foreground = #fff
 ; format-underline = ${colors.green}
 label = " %percentage_used%%  "
@@ -388,18 +388,18 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging-prefix = "bat+ "
+format-charging-prefix = "     bat+ "
 format-charging = <animation-charging> <label-charging>
 format-charging-foreground = #fff
 ; format-charging-underline =
 
-format-discharging-prefix = "bat "
+format-discharging-prefix = "     bat- "
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-foreground = #fff
 ; format-discharging-underline =
 
-format-full-prefix = "bat "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = "     bat  "
+format-full-prefix-foreground = ${colors.foreground}
 ; format-full-underline = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
