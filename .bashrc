@@ -39,7 +39,7 @@ alias recent_files='find . -name code -prune -o -type f -mtime -2 -print'
   # docker run --rm --name postgres -p 5432:5432 -d postgres
 # }
 
-alias pgme='docker run --rm --name postgres -p 5432:5432 -d postgres'
+alias pgme='docker run --rm --name postgres -p 5432:5432 -d -e POSTGRES_PASSWORD=postgres postgres'
 
 # rewrite this to take an arg
 alias dockerpsql='docker run --rm --name $(echo $(pwd | rev | cut -d"/" -f 1 | rev)) -p 5432:5432 -d postgres'
@@ -70,3 +70,7 @@ test -s /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/init-nvm.sh
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR=nvim
+
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # exec tmux
+# fi
