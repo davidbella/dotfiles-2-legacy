@@ -122,4 +122,4 @@ super + {Left,Down,Up,Right}
 
 # greenclip
 ctrl + shift + c
-  rofi -modi "clipboard:greenclip print" -show clipboard -run-command
+  rofi -modi "clipboard:greenclip print" -show clipboard -run-command -m -1
