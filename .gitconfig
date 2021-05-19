@@ -15,5 +15,9 @@
 
 [branch]
   sort = authordate
+
 [init]
-	defaultBranch = master
+  defaultBranch = master
+
+[pull]
+  rebase = false
