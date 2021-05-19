@@ -45,10 +45,10 @@ line-color = #f00
 border-size = 0
 border-color = #282c34
 
-border-top-size = 4
+border-top-size = 0
 border-top-color = #666
 
-border-bottom-size = 4
+border-bottom-size = 1
 border-bottom-color = #666
 
 padding-left = 0
