@@ -1,5 +1,6 @@
 #! /bin/sh
 
+pkill sxhkd
 sxhkd &
 
 bspc monitor HDMI-0 -d g 1 2 3 4 5
