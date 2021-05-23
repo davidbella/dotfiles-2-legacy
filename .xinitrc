@@ -1,4 +1,4 @@
-.screenlayout/perfect-horiz.sh
+.screenlayout/docked.sh
 
 xset r rate 270 48
 
