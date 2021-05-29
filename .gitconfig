@@ -15,3 +15,5 @@
 
 [branch]
   sort = authordate
+[init]
+	defaultBranch = master
