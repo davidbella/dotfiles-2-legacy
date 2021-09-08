@@ -52,14 +52,14 @@ redisme() {
 alias dockeryarn='docker run --rm -it -v $(pwd):/app -w /app node yarn'
 ###
 
-export PROMPT_COMMAND='$(~/prompt-command.sh)'
+export PROMPT_COMMAND='$($HOME/bin/prompt-command.sh)'
 
 # GIT_PROMPT_START="\n \u@\h in \w"
 # GIT_PROMPT_END="\n   \@  "
 GIT_PROMPT_START="\[\033[1;034m\]\n \[\033[1;035m\]\u\[\033[1;034m\]@\[\033[1;036m\]\h \[\033[1;034m\]in \[\033[1;039m\]\w\[\033[0m\]"
 GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[\033[0m\]  \[\033[32m\]\@\[\033[0m\]  "
 
-source ~/git-completion.bash
+source $HOME/bin/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
 test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh
 chruby ruby-2.7.1
@@ -70,6 +70,9 @@ test -s /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/init-nvm.sh
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR=nvim
+
+# Add a new path to put scripts/executables/bins/etc.
+export PATH=$HOME/bin:$PATH
 
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   # exec tmux
