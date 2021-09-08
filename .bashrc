@@ -61,8 +61,7 @@ GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[
 
 source $HOME/bin/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
-test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh
-chruby ruby-2.7.1
+test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh && chruby ruby-2.7.1
 
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
