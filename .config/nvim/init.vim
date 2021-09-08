@@ -21,6 +21,10 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'SirVer/ultisnips'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
 call plug#end()
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
@@ -87,6 +91,12 @@ map <leader>c :let @+ = expand("%")<cr>
 " leader-d/D to close buffers
 map <leader>d :bd<cr>
 map <leader>D :bufdo bd<cr>
+
+" toggle vista.vim
+map <leader>v :Vista!!<cr>
+let g:vista_close_on_jump=1
+let g:vista_blink=[1, 100]
+let g:vista_default_executive = 'nvim_lsp'
 
 " disables nvim from setting a guicursor (keeps terminal settings cursor)
 set guicursor=
@@ -368,3 +378,9 @@ hi GitGutterDeleteInvisible ctermfg=NONE ctermbg=NONE
 hi GitGutterAdd ctermfg=2 ctermbg=NONE
 hi GitGutterChange ctermfg=3 ctermbg=NONE
 hi GitGutterDelete ctermfg=1 ctermbg=NONE
+
+lua << EOF
+require'lspconfig'.elixirls.setup{
+    cmd = { "/usr/bin/elixir-ls" };
+}
+EOF
