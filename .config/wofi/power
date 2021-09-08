@@ -1,0 +1,16 @@
+entries="Lock,Logout,Suspend,Reboot,Shutdown"
+
+selected=$(echo $entries | wofi -m 0 --dmenu --separator=',' -p "power" -i | awk '{print tolower($1)}')
+
+case $selected in
+  lock)
+    exec ~/bin/lock.sh;;
+  logout)
+    swaymsg exit;;
+  suspend)
+    exec systemctl suspend;;
+  reboot)
+    exec systemctl reboot;;
+  shutdown)
+    exec systemctl poweroff -i;;
+esac
