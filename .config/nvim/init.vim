@@ -69,6 +69,18 @@ set synmaxcol=200
 
 let mapleader = ","
 
+" Search brings result to middle of screen
+nnoremap n nzz
+nnoremap N Nzz
+
+" H/L for beginning/end of line
+nnoremap H ^
+nnoremap L $
+
+" Ctrl-j/Ctrl-k for scrolling, escaping insert mode
+noremap <C-j> <esc><C-e>
+noremap <C-k> <esc><C-y>
+
 " leader-c to copy current file name into clipboard buffer
 map <leader>c :let @+ = expand("%")<cr>
 
@@ -317,11 +329,11 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map <leader>h :nohlsearch<cr>
 
 " lots of very specific highlighting color changes
-hi IncSearch cterm=bold,reverse ctermbg=NONE guibg=NONE
-hi Search cterm=bold,reverse ctermbg=NONE guibg=NONE
-" hi ColorColumn cterm=bold ctermfg=1 ctermbg=NONE guibg=NONE
-hi Visual cterm=bold ctermbg=NONE guibg=NONE
-hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE guibg=NONE
+hi IncSearch cterm=bold,reverse ctermbg=NONE
+hi Search cterm=bold,reverse ctermbg=NONE
+" hi ColorColumn cterm=bold ctermfg=1
+hi Visual cterm=bold ctermbg=NONE
+hi DiffAdd cterm=bold ctermfg=2
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
 hi DiffDelete cterm=bold ctermfg=1 ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
@@ -329,9 +341,11 @@ hi MatchParen cterm=underline ctermbg=NONE guibg=NONE
 hi SpellCap cterm=underline ctermbg=NONE guibg=NONE
 hi SpellBad cterm=underline ctermbg=NONE guibg=NONE
 hi Folded cterm=underline ctermfg=1 ctermbg=NONE
-hi VertSplit cterm=NONE gui=NONE
+hi VertSplit cterm=NONE
 hi StatusLine cterm=bold
 hi StatusLineNC cterm=NONE
+
+hi Todo cterm=bold ctermfg=11 ctermbg=0
 
 hi NeomakeError ctermfg=1
 hi NeomakeWarning ctermfg=1
