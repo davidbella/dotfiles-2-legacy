@@ -2,7 +2,7 @@
 
 if [ $TERM == "tmux-256color" ]
 then
-  tmux_cwd="$(tmux display-message -p -F "#{pane_current_path}" -t0)"
+  tmux_cwd="$(tmux display-message -p -F "#{pane_current_path}" -t1)"
 
   directory_name="$(echo $tmux_cwd | rev | cut -d"/" -f1 | rev)"
   up_directory_name="$(echo $tmux_cwd | rev | cut -d"/" -f2 | rev)"
