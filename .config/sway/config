@@ -35,11 +35,11 @@ output * bg ~/.config/backgrounds/pixel-sea.jpg fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output eDP-1 {
-    background ~/.config/backgrounds/pixel-sea.jpg fill
-    resolution 3200x1800
-    position 320,1020
-}
+# output eDP-1 {
+    # background ~/.config/backgrounds/pixel-sea.jpg fill
+    # resolution 3200x1800
+    # position 320,1020
+# }
 
 # output DP-3 {
     # background ~/.config/backgrounds/pixel-sea.jpg fill
@@ -48,45 +48,13 @@ output eDP-1 {
     # transform 270
 # }
 
-# output DP-4 {
-    # background ~/.config/backgrounds/pixel-sea.jpg fill
-    # resolution 1920x1080
-    # position 3000,460
-# }
-
-output DP-5 {
-    background ~/.config/backgrounds/pixel-sea.jpg fill
-    resolution 1920x1080
-    position 1920,0
-    transform 270
-}
-
-output DP-6 {
-    background ~/.config/backgrounds/pixel-sea.jpg fill
-    resolution 1920x1080
-    position 3000,460
-}
-
-output DP-7 {
-    background ~/.config/backgrounds/pixel-sea.jpg fill
-    resolution 1920x1080
-    position 1920,0
-    transform 270
-}
-
-output DP-8 {
-    background ~/.config/backgrounds/pixel-sea.jpg fill
-    resolution 1920x1080
-    position 3000,460
-}
-
 ### Idle configuration
 #
 # Example configuration:
 #
 exec swayidle \
-         timeout 300 'exec $lock' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 1200 'exec $lock' \
+         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'exec $lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -114,18 +82,6 @@ title_align center
 input * repeat_delay 270
 input * repeat_rate 48
 
-# set $wsg 0
-# set $ws1 1
-# set $ws2 2
-# set $ws3 3
-# set $ws4 4
-# set $ws5 5
-# set $ws6 6
-# set $ws7 7
-# set $ws8 8
-# set $ws9 9
-# set $ws10 10
-
 set $wsg 0:
 set $ws1 1:1
 set $ws2 2:2
@@ -139,28 +95,16 @@ set $ws9 9:9
 set $ws10 10:
 
 workspace $wsg output eDP-1
-workspace $ws1 output DP-5
-workspace $ws2 output DP-5
-workspace $ws3 output DP-5
-workspace $ws4 output DP-5
+workspace $ws1 output DP-4
+workspace $ws2 output DP-4
+workspace $ws3 output DP-4
+workspace $ws4 output DP-4
 workspace $ws5 output eDP-1
 workspace $ws6 output eDP-1
-workspace $ws7 output DP-6
-workspace $ws8 output DP-6
-workspace $ws9 output DP-6
-workspace $ws10 output DP-6
-
-workspace $wsg output eDP-1
-workspace $ws1 output DP-7
-workspace $ws2 output DP-7
-workspace $ws3 output DP-7
-workspace $ws4 output DP-7
-workspace $ws5 output eDP-1
-workspace $ws6 output eDP-1
-workspace $ws7 output DP-8
-workspace $ws8 output DP-8
-workspace $ws9 output DP-8
-workspace $ws10 output DP-8
+workspace $ws7 output DP-4
+workspace $ws8 output DP-4
+workspace $ws9 output DP-4
+workspace $ws10 output eDP-1
 
 ### Key bindings
 #
