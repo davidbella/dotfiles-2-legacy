@@ -110,6 +110,10 @@ set diffopt+=vertical
 
 set scrolloff=5
 
+""" SuperTab
+" https://stackoverflow.com/questions/17104861/vim-supertab-plugin-reverses-the-direction-when-navigating-completion-menu
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 """ Statusline
 " function! GitBranch()
   " return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
