@@ -97,6 +97,7 @@ map <leader>v :Vista!!<cr>
 let g:vista_close_on_jump=1
 let g:vista_blink=[1, 100]
 let g:vista_default_executive = 'nvim_lsp'
+let g:vista_sidebar_width = 60
 
 " disables nvim from setting a guicursor (keeps terminal settings cursor)
 set guicursor=
