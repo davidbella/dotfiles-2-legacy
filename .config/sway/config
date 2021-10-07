@@ -70,7 +70,7 @@ title_align center
 #
 # Example configuration:
 #
-  input "1739:30383:DLL075B:01_06CB:76AF_Touchpad" {
+  input "1739:52710:DLL0945:00_06CB:CDE6_Touchpad" {
       dwt enabled
       tap enabled
       natural_scroll enabled
@@ -95,15 +95,15 @@ set $ws9 9:9
 set $ws10 10:
 
 workspace $wsg output eDP-1
-workspace $ws1 output DP-4
-workspace $ws2 output DP-4
-workspace $ws3 output DP-4
-workspace $ws4 output DP-4
+workspace $ws1 output DP-6
+workspace $ws2 output DP-6
+workspace $ws3 output DP-6
+workspace $ws4 output DP-6
 workspace $ws5 output eDP-1
 workspace $ws6 output eDP-1
-workspace $ws7 output DP-4
-workspace $ws8 output DP-4
-workspace $ws9 output DP-4
+workspace $ws7 output DP-6
+workspace $ws8 output DP-6
+workspace $ws9 output DP-6
 workspace $ws10 output eDP-1
 
 ### Key bindings
@@ -255,6 +255,12 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+bindsym XF86MonBrightnessUp exec "sudo bright_up.sh"
+bindsym XF86MonBrightnessDown exec "sudo bright_down.sh"
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
+bindsym XF86AudioMute exec "amixer set Master 1+ toggle"
 
 #
 # Status Bar:
