@@ -76,3 +76,12 @@ export PATH=$HOME/bin:$PATH
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   # exec tmux
 # fi
+
+FNDIR=$HOME/lib/sh
+if [ -d $FNDIR ]
+then
+    for f in $FNDIR/*.sh
+    do
+       test -x $f && source $f
+    done
+fi
