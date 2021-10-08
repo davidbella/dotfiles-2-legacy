@@ -15,6 +15,9 @@ then
     home)
       output="__home"
       ;;
+    Drip)
+      output=$directory_name
+      ;;
     *)
       case "$my_documents_dir_name" in
         Documents/MyDocuments)
