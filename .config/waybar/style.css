@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, "M+ 1mn", Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
@@ -106,8 +106,7 @@ window#waybar.chromium {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: #26A65B;
 }
 
 @keyframes blink {
@@ -148,12 +147,11 @@ label:focus {
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    font-weight: 800;
+    color: #f53c3c;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {

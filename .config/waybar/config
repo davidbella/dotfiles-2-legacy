@@ -5,8 +5,8 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "network#vpn", "cpu", "memory", "battery", "battery#bat2", "tray"],
+    "modules-center": ["custom/clock"],
+    "modules-right": ["network", "network#vpn", "cpu", "memory", "backlight", "pulseaudio", "battery", "battery#bat2", "tray"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -72,6 +72,10 @@
         "interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
+    "custom/clock": {
+        "exec": "date +'%F %A %r'",
+        "interval": 1
+    },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
@@ -88,9 +92,11 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
+        "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": ["", ""],
+        "on-scroll-up": "sudo bright_up.sh",
+        "on-scroll-down": "sudo bright_down.sh"
     },
     "battery": {
         "states": {
@@ -119,8 +125,8 @@
     },
     "network#vpn": {
         "interface": "tun0", // (Optional) To force the use of this interface
-        "format-ethernet": " VPN",
-        "format-disconnected": "⚠ VPN",
+        "format-ethernet": "VPN ",
+        "format-disconnected": "VPN ⚠",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
