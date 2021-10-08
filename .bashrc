@@ -71,9 +71,12 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR=nvim
 
 # Add a new path for drip scripts
-source "$HOME/.drv/drv.env"
-export PATH=$HOME/.drv/bin:$PATH
-source $HOME/Documents/Drip/foundation-tools/share/bash_profile
+if [ -d "$HOME/.drv" ]
+then
+  source "$HOME/.drv/drv.env"
+  export PATH=$HOME/.drv/bin:$PATH
+  source $HOME/Documents/Drip/foundation-tools/share/bash_profile
+fi
 
 # Add a new path to put scripts/executables/bins/etc.
 export PATH=$HOME/bin:$PATH
@@ -85,8 +88,8 @@ export PATH=$HOME/bin:$PATH
 FNDIR=$HOME/lib/sh
 if [ -d $FNDIR ]
 then
-    for f in $FNDIR/*.sh
-    do
-       test -x $f && source $f
-    done
+  for f in $FNDIR/*.sh
+  do
+     test -x $f && source $f
+  done
 fi
