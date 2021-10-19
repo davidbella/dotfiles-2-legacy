@@ -262,6 +262,9 @@ bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
 bindsym XF86AudioMute exec "amixer set Master 1+ toggle"
 
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+
 #
 # Status Bar:
 #
