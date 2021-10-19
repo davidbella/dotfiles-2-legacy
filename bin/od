@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Opens a new alacritty window and attaches to an existing (or makes a new) session given a Drip project name
+
+alacritty -e tmux new-session -A -c ~/Documents/Drip/$1 -t $1
