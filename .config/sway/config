@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show run -m $(swaymsg -t get_outputs | jq 'map(select(.active) | .focused) | reverse | index(true)') -run-command 'swaymsg exec -- {cmd}'
+set $menu rofi -show run -kb-row-select "Tab" -kb-row-tab "" -m $(swaymsg -t get_outputs | jq 'map(select(.active) | .focused) | reverse | index(true)') -run-command 'swaymsg exec -- {cmd}'
 # Lock screen
 set $lock bin/lock.sh
 # Power menu
@@ -94,16 +94,21 @@ set $ws8 8:8
 set $ws9 9:9
 set $ws10 10:
 
+
+set $exm swaymsg -t get_outputs | jq 'map(select(.name != "eDP-1")) | map(.name) | first'
+
+set $exm "BenQ Corporation BenQ XL2411Z 93G01355SL0"
+
 workspace $wsg output eDP-1
-workspace $ws1 output DP-6
-workspace $ws2 output DP-6
-workspace $ws3 output DP-6
-workspace $ws4 output DP-6
-workspace $ws5 output eDP-1
-workspace $ws6 output eDP-1
-workspace $ws7 output DP-6
-workspace $ws8 output DP-6
-workspace $ws9 output DP-6
+workspace $ws1 output $exm
+workspace $ws2 output $exm
+workspace $ws3 output $exm
+workspace $ws4 output $exm
+workspace $ws5 output $exm
+workspace $ws6 output $exm
+workspace $ws7 output $exm
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
 workspace $ws10 output eDP-1
 
 ### Key bindings
