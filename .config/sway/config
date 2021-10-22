@@ -207,6 +207,8 @@ workspace $ws10 output eDP-1
 #
 # Layout stuff:
 #
+    workspace_layout tabbed
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
