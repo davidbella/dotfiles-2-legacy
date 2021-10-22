@@ -348,7 +348,7 @@ hi IncSearch cterm=bold,reverse ctermbg=NONE
 hi Search cterm=bold,reverse ctermbg=NONE
 " hi ColorColumn cterm=bold ctermfg=1
 hi Visual cterm=bold ctermbg=NONE
-hi DiffAdd cterm=bold ctermfg=2
+hi DiffAdd cterm=bold ctermfg=2 ctermbg=NONE
 hi DiffChange cterm=bold ctermfg=3 ctermbg=NONE guibg=NONE
 hi DiffDelete cterm=bold ctermfg=1 ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi DiffText cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
