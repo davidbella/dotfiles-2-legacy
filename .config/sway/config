@@ -24,6 +24,7 @@ set $lock bin/lock.sh
 # Power menu
 set $power $HOME/.config/wofi/power
 
+set $exm "BenQ Corporation BenQ XL2411Z 93G01355SL0"
 
 ### Output configuration
 #
@@ -35,18 +36,17 @@ output * bg ~/.config/backgrounds/pixel-sea.jpg fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-# output eDP-1 {
-    # background ~/.config/backgrounds/pixel-sea.jpg fill
-    # resolution 3200x1800
-    # position 320,1020
-# }
+output eDP-1 {
+    background ~/.config/backgrounds/pixel-sea.jpg fill
+    resolution 3200x1800
+    position 180,1080
+}
 
-# output DP-3 {
-    # background ~/.config/backgrounds/pixel-sea.jpg fill
-    # resolution 1920x1080
-    # position 1920,0
-    # transform 270
-# }
+output $exm {
+    background ~/.config/backgrounds/pixel-sea.jpg fill
+    resolution 1920x1080
+    position 0,0
+}
 
 ### Idle configuration
 #
@@ -100,8 +100,6 @@ set $ws7 7:7
 set $ws8 8:8
 set $ws9 9:9
 set $ws10 10:
-
-set $exm "BenQ Corporation BenQ XL2411Z 93G01355SL0"
 
 workspace $wsg output eDP-1
 workspace $ws1 output $exm
