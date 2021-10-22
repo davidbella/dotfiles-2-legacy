@@ -68,17 +68,24 @@ title_align center
 
 ### Input configuration
 #
-# Example configuration:
-#
-  input "1739:52710:DLL0945:00_06CB:CDE6_Touchpad" {
-      dwt enabled
-      tap enabled
-      natural_scroll enabled
-      middle_emulation enabled
-  }
-#
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+#
+# Does not work
+# set $input "$(swaymsg -t get_inputs | jq 'map(select(.type == "touchpad")) | map(.identifier) | first')"
+#
+# Old:XPS13
+# set $input "1739:30383:DLL075B:01_06CB:76AF_Touchpad"
+
+# Seems to work fine targeting ALL inputs - might not work with a mouse
+set $input *
+
+input $input {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
 input * repeat_delay 270
 input * repeat_rate 48
 
@@ -93,9 +100,6 @@ set $ws7 7:7
 set $ws8 8:8
 set $ws9 9:9
 set $ws10 10:
-
-
-set $exm swaymsg -t get_outputs | jq 'map(select(.name != "eDP-1")) | map(.name) | first'
 
 set $exm "BenQ Corporation BenQ XL2411Z 93G01355SL0"
 
