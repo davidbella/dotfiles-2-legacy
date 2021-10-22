@@ -61,7 +61,7 @@ font-0 = Iosevka:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm
+modules-left = i3
 modules-center = date
 modules-right = mullvad eth wlan cpu memory battery
 
@@ -146,7 +146,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
