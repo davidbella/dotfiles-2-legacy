@@ -70,22 +70,14 @@ title_align center
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-#
-# Does not work
-# set $input "$(swaymsg -t get_inputs | jq 'map(select(.type == "touchpad")) | map(.identifier) | first')"
-#
-# Old:XPS13
-# set $input "1739:30383:DLL075B:01_06CB:76AF_Touchpad"
 
-# Seems to work fine targeting ALL inputs - might not work with a mouse
-set $input *
-
-input $input {
+input type:touchpad {
     dwt enabled
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
 }
+
 input * repeat_delay 270
 input * repeat_rate 48
 
