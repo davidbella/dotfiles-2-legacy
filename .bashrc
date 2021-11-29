@@ -61,8 +61,13 @@ GIT_PROMPT_END="\n \[\033[1;${foreground}m\]\[\033[${background}m\]\[\033[0m\]\[
 
 source $HOME/bin/git-completion.bash
 source ~/.bash-git-prompt/gitprompt.sh
+
+### chruby
+# Debian default install location
 test -s /usr/local/share/chruby/chruby.sh && source /usr/local/share/chruby/chruby.sh && chruby ruby-2.7.2
 
+# Arch default install
+test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh && chruby ruby-2.7.1
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
 test -s /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/init-nvm.sh
