@@ -33,6 +33,10 @@ alias onetodo='todo | shuf | head -1'
 
 alias recent_files='find . -name code -prune -o -type f -mtime -2 -print'
 
+phoenix_template() {
+  mix phx.new $1 --live --no-ecto --no-gettext --no-dashboard --no-mailer --install
+}
+
 ### Can I do this kind of stuff more generally? Or extract this?
 # Docker
 # pgme() {
