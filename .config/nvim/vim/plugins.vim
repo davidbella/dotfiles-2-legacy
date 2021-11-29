@@ -25,12 +25,14 @@ let g:Lf_WildIgnore = {
 " search buffers
 nnoremap <silent> <leader>b :Leaderf buffer --left<CR><Tab>
 
+" search bufTags
+nnoremap <silent> <leader>v :Leaderf bufTag --right<CR><Tab>
+
 " search files
 nnoremap <silent> <leader>f :Leaderf file --popup<CR>
 
 " grep files in popup window
 nnoremap <silent> <leader>g :Leaderf rg --popup<CR>
-
 
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
