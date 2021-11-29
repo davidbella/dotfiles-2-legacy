@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'liuchengxu/vista.vim'
 
 Plug 'nathangrigg/vim-beancount'
 
