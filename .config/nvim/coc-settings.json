@@ -1,0 +1,7 @@
+"codeLens.enable": true,
+"languageserver": {
+  "elixirLS": {
+    "command": "/usr/bin/elixir-ls",
+    "filetypes": ["elixir", "eelixir"]
+  }
+}
