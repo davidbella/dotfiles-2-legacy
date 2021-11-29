@@ -38,7 +38,7 @@ set updatetime=100
 " Sets block cursor in normal, vertical bar in insert, underscore in replace
 " Run these as autocommands
 au VimEnter,VimResume * set guicursor=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
-au VimLeave,VimSuspend * set guicursor=a:hor100
+au VimLeave,VimSuspend * set guicursor=a:ver100
 
 " Autofold markdown files on save
 au BufWritePost *.md set ft=markdown
