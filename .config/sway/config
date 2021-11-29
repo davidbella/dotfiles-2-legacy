@@ -221,6 +221,10 @@ workspace $ws10 output $exm
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # Move focus to the child container
+    bindsym $mod+shift+a focus child
+#
 #
 # Scratchpad:
 #
@@ -264,8 +268,13 @@ bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
 bindsym XF86AudioMute exec "amixer set Master 1+ toggle"
 
-bindswitch lid:on output eDP-1 disable
-bindswitch lid:off output eDP-1 enable
+# This would be great if kanshi had ever implemented the switch IPC command!
+# I may take a crack at doing it myself, it didn't look too hard
+# bindswitch --locked lid:on exec kanshictl switch lid-opened
+# bindswitch --locked lid:off exec kanshictl switch lid-closed
+
+bindswitch --reload --locked lid:on exec ~/bin/laptop-clamshell.sh
+bindswitch --reload --locked lid:off exec ~/bin/laptop-clamshell.sh
 
 #
 # Status Bar:
@@ -287,5 +296,10 @@ bindswitch lid:off output eDP-1 enable
 # }
 
 exec_always ~/.config/waybar/launch.sh
+exec_always ~/bin/laptop-clamshell.sh
+# exec_always kanshi
+
+# TODO: Make this a script for idempotency
+exec_always /usr/bin/lxqt-policykit-agent
 
 include /etc/sway/config.d/*
