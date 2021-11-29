@@ -5,6 +5,7 @@ Plug 'scrooloose/nerdtree'
 " Switching back to NERDTree for now - I'm just too used to its functionality
 
 Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'

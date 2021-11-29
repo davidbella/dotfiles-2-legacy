@@ -32,6 +32,9 @@ set fillchars+=vert:\
 set ignorecase
 set smartcase
 
+" Allows git-gutter to update at the speed of fast enough to not suck
+set updatetime=100
+
 " Sets block cursor in normal, vertical bar in insert, underscore in replace
 " Run these as autocommands
 au VimEnter,VimResume * set guicursor=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
