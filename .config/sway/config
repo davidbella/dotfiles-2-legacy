@@ -54,8 +54,8 @@ output $exm {
 #
 exec swayidle \
          timeout 1200 'exec $lock' \
-         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'exec $lock'
+         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' # \
+         # before-sleep 'exec $lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -65,6 +65,7 @@ smart_borders on
 focus_follows_mouse no
 titlebar_border_thickness 0
 title_align center
+focus_wrapping no
 
 ### Input configuration
 #
@@ -93,17 +94,17 @@ set $ws8 8:8
 set $ws9 9:9
 set $ws10 10:
 
-workspace $wsg output eDP-1
+workspace $wsg output $exm
 workspace $ws1 output $exm
 workspace $ws2 output $exm
 workspace $ws3 output $exm
 workspace $ws4 output $exm
-workspace $ws5 output $exm
+workspace $ws5 output eDP-1
 workspace $ws6 output $exm
 workspace $ws7 output $exm
-workspace $ws8 output eDP-1
-workspace $ws9 output eDP-1
-workspace $ws10 output eDP-1
+workspace $ws8 output $exm
+workspace $ws9 output $exm
+workspace $ws10 output $exm
 
 ### Key bindings
 #
