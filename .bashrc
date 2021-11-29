@@ -72,13 +72,20 @@ test -s /usr/local/share/chruby/chruby.sh && source /usr/local/share/chruby/chru
 
 # Arch default install
 test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh && chruby ruby-2.7.1
+
+### kiex
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
+### nvm
 test -s /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/init-nvm.sh
 
+### elixir
+# Enable history in iex
 export ERL_AFLAGS="-kernel shell_history enabled"
+
 export EDITOR=nvim
 
+### Drip
 # Add a new path for drip scripts
 if [ -d "$HOME/.drv" ]
 then
