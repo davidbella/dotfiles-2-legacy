@@ -1,19 +1,5 @@
 colorscheme monochrome
 
-""" Telescope
-"" mappings
-" open buffers
-nnoremap <silent> <leader>b <cmd>Telescope buffers<CR><Esc>
-
-" open lsp symbols
-nnoremap <silent> <leader>v <cmd>Telescope lsp_document_symbols<CR><Esc>
-
-" search files
-nnoremap <silent> <leader>f <cmd>Telescope find_files find_command=rg,--hidden,--files<CR>
-
-" grep files
-nnoremap <silent> <leader>g <cmd>Telescope live_grep<CR>
-
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
 " autocmd vimenter * NERDTree

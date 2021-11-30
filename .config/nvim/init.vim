@@ -38,3 +38,4 @@ endfor
 
 lua require('lsp')
 lua require('org')
+lua require('tel')
