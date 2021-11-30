@@ -1,38 +1,18 @@
 colorscheme monochrome
 
-""" LeaderF
-"" globals
-" Show hidden files
-let g:Lf_ShowHidden = 1
-
-" Do not use cache file
-let g:Lf_UseCache = 0
-
-" Refresh each time we call leaderf
-let g:Lf_UseMemoryCache = 0
-
-" Ignore certain files and directories when searching files
-let g:Lf_WildIgnore = {
-  \ 'dir': ['.git', 'node_modules'],
-  \ 'file': ['*.exe', '*.dll', '*.so', '*.o', '*.pyc', '*.jpg', '*.png',
-  \ '*.gif', '*.svg', '*.ico', '*.db', '*.tgz', '*.tar.gz', '*.gz',
-  \ '*.zip', '*.bin', '*.pptx', '*.xlsx', '*.docx', '*.pdf', '*.tmp',
-  \ '*.wmv', '*.mkv', '*.mp4', '*.rmvb', '*.ttf', '*.ttc', '*.otf',
-  \ '*.mp3', '*.aac']
-  \}
-
+""" Telescope
 "" mappings
-" search buffers
-nnoremap <silent> <leader>b :Leaderf buffer --left<CR><Tab>
+" open buffers
+nnoremap <silent> <leader>b <cmd>Telescope buffers<CR><Esc>
 
-" search bufTags
-nnoremap <silent> <leader>v :Leaderf bufTag --right<CR><Tab>
+" open lsp symbols
+nnoremap <silent> <leader>v <cmd>Telescope lsp_document_symbols<CR><Esc>
 
 " search files
-nnoremap <silent> <leader>f :Leaderf file --popup<CR>
+nnoremap <silent> <leader>f <cmd>Telescope find_files find_command=rg,--hidden,--files<CR>
 
-" grep files in popup window
-nnoremap <silent> <leader>g :Leaderf rg --popup<CR>
+" grep files
+nnoremap <silent> <leader>g <cmd>Telescope live_grep<CR>
 
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree

@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'scrooloose/nerdtree'
 " Plug 'tpope/vim-vinegar'
 " Switching back to NERDTree for now - I'm just too used to its functionality
