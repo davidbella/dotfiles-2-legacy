@@ -17,6 +17,7 @@ local picker_theme = {
 
 require('telescope').setup{
   defaults = {
+    file_sorter = require("telescope.sorters").get_generic_fuzzy_sorter, -- gief me regex
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
