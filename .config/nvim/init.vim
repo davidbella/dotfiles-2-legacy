@@ -1,26 +1,32 @@
 call plug#begin('~/.local/share/nvim/plugged')
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter'
+
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+
+" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'scrooloose/nerdtree'
-" Plug 'tpope/vim-vinegar'
-" Switching back to NERDTree for now - I'm just too used to its functionality
 
+" NERDTree remains for now - I'm just too used to its functionality
+" Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
+" Generally Useful Tools
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/nvim-cmp'
-
-Plug 'nathangrigg/vim-beancount'
-
+" Themes
 Plug 'fxn/vim-monochrome'
+Plug 'phucngodev/mono'
 
+" Languages/Specialty
+Plug 'nathangrigg/vim-beancount'
 Plug 'elixir-lang/vim-elixir'
-
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-orgmode/orgmode'
 call plug#end()
 
