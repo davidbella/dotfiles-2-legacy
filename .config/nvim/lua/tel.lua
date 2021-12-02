@@ -39,8 +39,6 @@ require('telescope').setup{
   },
 }
 
-local map = vim.api.nvim_set_keymap
-
 function files()
   require('telescope.builtin').find_files()
 end
@@ -57,7 +55,9 @@ function lsp()
   require('telescope.builtin').lsp_document_symbols()
 end
 
+local map = vim.api.nvim_set_keymap
 options = { noremap = true }
+
 map('n', '<leader>f', "<cmd>lua files()<cr>", options)
 map('n', '<leader>g', "<cmd>lua grep()<cr>", options)
 map('n', '<leader>b', "<cmd>lua buffers()<cr><Esc>", options)
@@ -65,8 +65,6 @@ map('n', '<leader>v', "<cmd>lua lsp()<cr><Esc>", options)
 
 map('n', '<leader>F', "<cmd>lua require('telescope.builtin').grep_string()<cr>", options)
 map('n', '<leader>V', "<cmd>lua require('telescope.builtin').lsp_definitions()<cr><Esc>", options)
-
-map('n', '<leader>h', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
 
 vim.cmd [[
 set tagfunc=v:lua.vim.lsp.tagfunc

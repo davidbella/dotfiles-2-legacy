@@ -51,3 +51,8 @@ vim.diagnostic.config({
     severity = vim.diagnostic.severity.ERROR
   }
 })
+
+local map = vim.api.nvim_set_keymap
+options = { noremap = true }
+
+map('n', '<leader>h', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
