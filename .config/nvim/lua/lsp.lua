@@ -56,3 +56,7 @@ local map = vim.api.nvim_set_keymap
 options = { noremap = true }
 
 map('n', '<leader>h', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
+
+vim.cmd [[
+set tagfunc=v:lua.vim.lsp.tagfunc
+]]

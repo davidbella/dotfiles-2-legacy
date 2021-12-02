@@ -64,8 +64,4 @@ map('n', '<leader>b', "<cmd>lua buffers()<cr><Esc>", options)
 map('n', '<leader>v', "<cmd>lua lsp()<cr><Esc>", options)
 
 map('n', '<leader>F', "<cmd>lua require('telescope.builtin').grep_string()<cr>", options)
-map('n', '<leader>V', "<cmd>lua require('telescope.builtin').lsp_definitions()<cr><Esc>", options)
-
-vim.cmd [[
-set tagfunc=v:lua.vim.lsp.tagfunc
-]]
+map('n', '<leader>]', "<cmd>lua require('telescope.builtin').lsp_definitions()<cr><Esc>", options)
