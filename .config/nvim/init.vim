@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdcommenter'
 " Generally Useful Tools
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 
 " Themes
 Plug 'fxn/vim-monochrome'

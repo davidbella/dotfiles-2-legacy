@@ -37,3 +37,6 @@ function! DaySearch(date)
 endfunction
 
 map <silent> <leader>mp :call DaySearch(strftime("%Y-%m-%d", localtime() - 3600 * 24))<CR>N
+
+""" vim-projectionist
+map <silent> <leader>a :A<cr>
