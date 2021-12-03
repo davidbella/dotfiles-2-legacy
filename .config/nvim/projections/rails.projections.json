@@ -1,0 +1,10 @@
+{
+  "app/models/*.rb": {
+    "alternate": "test/models/{}_test.rb",
+    "type": "model"
+  },
+  "test/models/*_test.rb": {
+    "alternate": "app/models/{}.rb",
+    "type": "test"
+  }
+}
