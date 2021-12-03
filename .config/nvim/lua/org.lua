@@ -27,17 +27,17 @@ require('orgmode').setup({
     t = {
       description = 'Task',
       template = '* TODO %?\n  %T',
-      target = '~/Documents/MyDocuments/ManualMD/orgmode/tasks.org',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/tasks.org',
     },
     b = {
       description = 'Bookmark',
       template = '* [[%?][]]\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n',
-      target = '~/Documents/MyDocuments/ManualMD/orgmode/bookmarks.org',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/bookmarks.org',
     },
     c = {
       description = 'Citation',
       template = '* %?\n  :PROPERTIES:\n  :CREATED: %U\n  :TITLE:     \n  :BTYPE:     \n  :CUSTOM_ID: \n  :AUTHOR:    \n  :YEAR:      \n  :PUBLISHER: \n  :END:\n\n',
-      target = '~/Documents/MyDocuments/ManualMD/orgmode/citations.org',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/citations.org',
     }
   },
   -- org_agenda_start_on_weekday = 0,
