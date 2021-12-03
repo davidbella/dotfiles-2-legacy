@@ -1,17 +1,5 @@
 ;==========================================================
 ;
-; THIS IS AN EXAMPLE CONFIGURATION FILE!
-; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
-; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
-; TO GENERATE IT.
-; Please refer to the web documentation hosted at:
-; https://github.com/polybar/polybar#configuration
-; and
-; https://github.com/polybar/polybar/wiki/Configuration
-; if you want to automatically generate one for you.
-;
-;==========================================================
-;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
@@ -30,20 +18,20 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #285577
+background = #3b3b3b
+background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
+foreground-alt = #888
+primary = #ffb51a
 secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
-;offset-x = 1%
+height = 42
+;offset-x = 40%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
@@ -55,21 +43,27 @@ line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #285577
+border-color = #282c34
+
+border-top-size = 0
+border-top-color = #666
+
+border-bottom-size = 1
+border-bottom-color = #666
 
 padding-left = 0
-padding-right = 2
+padding-right = 3
 
 module-margin-left = 1
-module-margin-right = 6
+module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = Iosevka:pixelsize=12;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory pulseaudio wlan battery
+modules-right = mullvad eth wlan cpu memory battery
 
 tray-position = right
 tray-padding = 2
@@ -114,29 +108,33 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+; label-mounted = "%{F#0a81f5}%mountpoint%%{F-}: %percentage_used%% / %total%     "
+label-mounted = "%{F#0a81f5}%mountpoint%  %{F#888888}%percentage_used%%       "
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused = %name%
+label-focused-foreground = #fff
+label-focused-background = #597bc5
+; label-focused-underline=
+label-focused-padding = 6
 
-label-occupied = %index%
-label-occupied-padding = 2
+label-occupied = %name%
+label-occupied-foreground = #fff
+label-occupied-padding = 6
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 6
 
-label-empty = %index%
+label-empty =
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 0
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -217,27 +215,51 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #f90000
-label = cpu %percentage:2%%
+format = <label> <ramp-coreload>
+format-foreground = ${colors.foreground}
+format-prefix = "cpu "
+format-prefix-foreground = #fff
+; format-underline = ${colors.background}
+label = " %percentage:2%%  "
+ramp-coreload-0 =
+ramp-coreload-0-background = #ac4344
+ramp-coreload-1 =
+ramp-coreload-1-background = #ac4344
+ramp-coreload-2 =
+ramp-coreload-2-background = #ac4344
+ramp-coreload-3 =
+ramp-coreload-3-background = #ac4344
+ramp-coreload-4 =
+ramp-coreload-4-background = #ac4344
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #4bffdc
-label = mem %percentage_used%%
+format = <label> <ramp-used>
+format-prefix = "mem "
+format-foreground = ${colors.foreground}
+format-prefix-foreground = #fff
+; format-underline = ${colors.green}
+label = " %percentage_used%%  "
+ramp-used-0 =
+ramp-used-0-background = #ac4344
+ramp-used-1 =
+ramp-used-1-background = #ac4344
+ramp-used-2 =
+ramp-used-2-background = #ac4344
+ramp-used-3 =
+ramp-used-3-background = #ac4344
+ramp-used-4 =
+ramp-used-4-background = #ac4344
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20f3
+interface = wlp58s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = "<label-connected>     "
 ; format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% @ %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -254,12 +276,13 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = enp57s0u1u2
 interval = 3.0
 
-format-connected-underline = #55aa55
+; format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected = <label-connected>
 label-connected = %local_ip%
 
 format-disconnected =
@@ -268,27 +291,47 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+[module/mullvad]
+type = internal/network
+interface = wg-mullvad
+interval = 3.0
+
+; format-connected-underline = #55aa55
+format-connected-prefix = "testing  "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected = <label-connected>
+label-connected = testing %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+unknown-as-up = true
+
 [module/date]
 type = internal/date
 interval = 5
 
-date = "%F %A %r"
+date = %F %A %r
 date-alt =
 
 time =
-time-alt = %H:%M:%S
+time-alt =
 
-format-prefix = 
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-; format-underline = #0a6cf5
+; format-underline =
 
-label = %date% %time%
+label = %date%
+label-foreground = #fff
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
-label-volume = vol %percentage%%
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
@@ -342,18 +385,22 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = AC
+adapter = ADP1
 full-at = 98
 
+format-charging-prefix = "     bat+ "
 format-charging = <animation-charging> <label-charging>
-; format-charging-underline = #ffb52a
+format-charging-foreground = #fff
+; format-charging-underline =
 
+format-discharging-prefix = "     bat- "
 format-discharging = <animation-discharging> <label-discharging>
-; format-discharging-underline = ${self.format-charging-underline}
+format-discharging-foreground = #fff
+; format-discharging-underline =
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-; format-full-underline = ${self.format-charging-underline}
+format-full-prefix = "     bat  "
+format-full-prefix-foreground = ${colors.foreground}
+; format-full-underline = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
