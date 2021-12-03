@@ -47,3 +47,6 @@ map <leader><space> <plug>NERDCommenterToggle
 """ GitGutter
 " Don't use mappings - these were slowing down my <leader>h calls
 let g:gitgutter_map_keys = 0
+
+""" vim-projectionist
+map <silent> <leader>a :A<cr>
