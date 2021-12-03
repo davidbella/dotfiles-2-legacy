@@ -55,7 +55,8 @@ vim.diagnostic.config({
 local map = vim.api.nvim_set_keymap
 options = { noremap = true }
 
-map('n', '<leader>h', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
+map('n', '<leader>H', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
+map('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<cr>', options)
 
 -- tag function from lsp just doesn't seem ready yet to me.
 -- I'm falling back to using plain old vim tagging here.
