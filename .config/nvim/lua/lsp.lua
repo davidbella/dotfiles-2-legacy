@@ -57,6 +57,10 @@ options = { noremap = true }
 
 map('n', '<leader>h', "<cmd>lua require('vim.diagnostic').open_float()<cr>", options)
 
-vim.cmd [[
-set tagfunc=v:lua.vim.lsp.tagfunc
-]]
+-- tag function from lsp just doesn't seem ready yet to me.
+-- I'm falling back to using plain old vim tagging here.
+-- I will keep this func mapped to <leader>] for testing.
+-- vim.cmd [[
+-- set tagfunc=v:lua.vim.lsp.tagfunc
+-- ]]
+map('n', '<leader>]', '<cmd>lua vim.lsp.buf.definition()<cr>', options)

@@ -28,6 +28,9 @@ map <silent> <leader>c :let @+ = expand("%")<CR>
 map <leader>d :bd<cr>
 map <leader>D :bufdo bd<cr>
 
+" Display list of matching tags if more than one, credit: Thomas Wack
+noremap <C-]> g<C-]>
+
 """ ManualMD
 " Find most recent undone task
 map <silent> <leader>mt /- \[ \]<CR>N3l
