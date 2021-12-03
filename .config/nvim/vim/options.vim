@@ -1,5 +1,4 @@
-" Set number column unless a sign is shown
-set number relativenumber
+set number
 set signcolumn=number
 set numberwidth=6
 " Allow buffers to be hidden - does not require a save to switch
