@@ -24,6 +24,7 @@ Plug 'tpope/vim-projectionist'
 " Themes
 Plug 'fxn/vim-monochrome'
 Plug 'phucngodev/mono'
+Plug 'arcticicestudio/nord-vim'
 
 " Languages/Specialty
 Plug 'nathangrigg/vim-beancount'

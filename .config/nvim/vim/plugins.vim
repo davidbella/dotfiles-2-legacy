@@ -1,5 +1,6 @@
 " colorscheme monochrome
-colorscheme mono
+" colorscheme mono
+colorscheme nord
 
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree

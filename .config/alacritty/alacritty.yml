@@ -170,33 +170,33 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-colors:
-  # Default colors
-  primary:
-    background: '0x3b3b3b'
-    foreground: '0xadadad'
+# colors:
+  # # Default colors
+  # primary:
+    # background: '0x3b3b3b'
+    # foreground: '0xadadad'
 
-  # Normal colors
-  normal:
-    black:   '0x3b3b3b'
-    red:     '0xcf6a4c'
-    green:   '0x99ad6a'
-    yellow:  '0xd8ad4c'
-    blue:    '0x597bc5'
-    magenta: '0xa037b0'
-    cyan:    '0x71b9f8'
-    white:   '0xadadad'
+  # # Normal colors
+  # normal:
+    # black:   '0x3b3b3b'
+    # red:     '0xcf6a4c'
+    # green:   '0x99ad6a'
+    # yellow:  '0xd8ad4c'
+    # blue:    '0x597bc5'
+    # magenta: '0xa037b0'
+    # cyan:    '0x71b9f8'
+    # white:   '0xadadad'
 
-  # Bright colors
-  bright:
-    black:   '0x3b3b3b'
-    red:     '0xcf6a4c'
-    green:   '0x99ad6a'
-    yellow:  '0xd8ad4c'
-    blue:    '0x597bc5'
-    magenta: '0xa037b0'
-    cyan:    '0x71b9f8'
-    white:   '0xadadad'
+  # # Bright colors
+  # bright:
+    # black:   '0x3b3b3b'
+    # red:     '0xcf6a4c'
+    # green:   '0x99ad6a'
+    # yellow:  '0xd8ad4c'
+    # blue:    '0x597bc5'
+    # magenta: '0xa037b0'
+    # cyan:    '0x71b9f8'
+    # white:   '0xadadad'
 
 # Colors (Tomorrow Night Bright)
 # colors:
