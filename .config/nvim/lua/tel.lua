@@ -17,6 +17,8 @@ require('telescope').setup{
     },
     file_sorter = require("telescope.sorters").get_generic_fuzzy_sorter, -- gief me regex
     sorting_strategy = "ascending",
+    -- selection_strategy = "follow",
+    scroll_strategy = "limit",
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -40,6 +42,10 @@ require('telescope').setup{
       },
       sort_lastused = true
     },
+    grep_string = {
+      sorting_strategy = "ascending", -- doesn't seem to work, how can I sort my grep results better?
+      scroll_strategy = "cycle",
+    }
   },
 }
 
