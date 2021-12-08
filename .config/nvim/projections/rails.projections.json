@@ -42,5 +42,9 @@
       "",
       "end"
     ]
+  },
+  "app/views/*.html.erb": {
+    "alternate": "app/controllers/{dirname}_controller.rb",
+    "type": "view"
   }
 }

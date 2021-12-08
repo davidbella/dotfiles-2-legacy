@@ -3,7 +3,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 
-local servers = { 'elixirls', 'solargraph' }
+local servers = { 'elixirls', 'solargraph', 'gopls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
@@ -13,6 +13,8 @@ end
 lspconfig.elixirls.setup{
   cmd = { "/usr/bin/elixir-ls" };
 }
+
+lspconfig.gopls.setup{}
 
 lspconfig.solargraph.setup{}
 

@@ -2,6 +2,8 @@
 " colorscheme mono
 colorscheme nord
 
+hi Visual cterm=bold ctermbg=NONE
+
 """ NERDTree
 " Automagically open NERDTree on vim startup and default to file window instead of NERDTree
 " autocmd vimenter * NERDTree
@@ -48,5 +50,10 @@ map <leader><space> <plug>NERDCommenterToggle
 " Don't use mappings - these were slowing down my <leader>h calls
 let g:gitgutter_map_keys = 0
 
+""" vim-fugitive
+" Make diffs vertical for vim-fugitive
+set diffopt+=vertical
+
 """ vim-projectionist
+" Map alternate file to leader-a
 map <silent> <leader>a :A<cr>

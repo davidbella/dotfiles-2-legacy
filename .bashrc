@@ -69,10 +69,12 @@ source $HOME/bin/.bash-git-prompt/gitprompt.sh
 
 ### chruby
 # Debian default install location
-test -s /usr/local/share/chruby/chruby.sh && source /usr/local/share/chruby/chruby.sh && chruby ruby-2.7.2
+test -s /usr/local/share/chruby/chruby.sh && source /usr/local/share/chruby/chruby.sh
+test -s /usr/local/share/chruby/auto.sh && source /usr/local/share/chruby/auto.sh
 
 # Arch default install
-test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh && chruby ruby-2.7.1
+test -s /usr/share/chruby/chruby.sh && source /usr/share/chruby/chruby.sh
+test -s /usr/share/chruby/auto.sh && source /usr/share/chruby/auto.sh
 
 ### kiex
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
@@ -97,6 +99,9 @@ fi
 
 # Add a new path to put scripts/executables/bins/etc.
 export PATH=$HOME/bin:$PATH
+
+# Add the home directory go path for `gopls`
+export PATH=$HOME/go/bin:$PATH
 
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   # exec tmux
