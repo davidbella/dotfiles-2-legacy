@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function md() {
+function t() {
   if [ -z "$TMUX" ]; then
     tmux new-session -As __home -c $HOME
   else
@@ -25,9 +25,9 @@ function md() {
   fi
 }
 
-function md_completions() {
+function t_completions() {
   options=($(ls $HOME/Documents/MyDocuments))
   COMPREPLY=($(compgen -W "${options[*]}" "${COMP_WORDS[${COMP_CWORD}]}"))
 }
 
-complete -F md_completions md
+complete -F t_completions t

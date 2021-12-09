@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function tmux_sessions()
+{
+  tmux list-session -F '#S'
+}
+
+TMUX_SESSION=$( (echo new; tmux_sessions) | rofi -dmenu -i -p "Select session" )
+
+if [[ -z "${TMUX_SESSION}" ]]; then
+  echo "Cancel"
+elif [[ x"new" = x"${TMUX_SESSION}" ]]; then
+  echo "Chose a new session"
+  rofi-sensible-terminal -e tmux new-session &
+elif tmux_sessions | grep -q "${TMUX_SESSION}"; then
+  echo "Chose existing session ${TMUX_SESSION}"
+  rofi-sensible-terminal -e tmux attach -t "${TMUX_SESSION}" &
+else
+  echo "Chose new session ${TMUX_SESSION}"
+  rofi-sensible-terminal -e tmux new-session -A -c ~/Documents/MyDocuments/${TMUX_SESSION} -t ${TMUX_SESSION} &
+fi

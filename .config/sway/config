@@ -19,6 +19,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu rofi -show run -kb-row-select "Tab" -kb-row-tab "" -m $(swaymsg -t get_outputs | jq 'map(select(.active) | .focused) | reverse | index(true)') -run-command 'swaymsg exec -- {cmd}'
+set $termmenu bin/t
 # Lock screen
 set $lock bin/lock.sh
 # Power menu
@@ -53,8 +54,8 @@ output $exm {
 # Example configuration:
 #
 exec swayidle \
-         timeout 1200 'exec $lock' \
-         timeout 2400 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' # \
+         timeout 3600 'exec $lock' \
+         timeout 3605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' # \
          # before-sleep 'exec $lock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -122,11 +123,13 @@ workspace $ws10 output $exm
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    bindsym $mod+t exec $termmenu
+
     # Lock the screen
     bindsym Ctrl+$mod+l exec $lock
 
     # Start greenclip clipboard manager
-    bindsym Ctrl+Shift+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command -m -1
+    # bindsym Ctrl+Shift+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command -m -1
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -275,7 +278,6 @@ bindsym XF86AudioMute exec "amixer set Master 1+ toggle"
 
 bindswitch --reload --locked lid:on exec ~/bin/laptop-clamshell.sh
 bindswitch --reload --locked lid:off exec ~/bin/laptop-clamshell.sh
-
 #
 # Status Bar:
 #
