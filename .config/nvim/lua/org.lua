@@ -41,5 +41,5 @@ require('orgmode').setup({
     }
   },
   -- org_agenda_start_on_weekday = 0,
-  org_todo_keywords = {'TODO(t)', '|', 'DONE(d)'}
+  org_todo_keywords = {'TODO(t)', 'PROG(p)', '|', 'DONE(d)'}
 })
