@@ -56,6 +56,13 @@ redisme() {
 alias dockeryarn='docker run --rm -it -v $(pwd):/app -w /app node yarn'
 ###
 
+# if fd is not installed as "fd" use as alias for `fdfind`
+if [[ $(which fd) ]]; then
+  alias fd=fd
+else
+  alias fd=fdfind
+fi
+
 export PROMPT_COMMAND='$($HOME/bin/prompt-command.sh)'
 
 # PS1
