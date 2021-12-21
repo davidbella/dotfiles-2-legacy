@@ -107,6 +107,30 @@ workspace $ws8 output $exm
 workspace $ws9 output $exm
 workspace $ws10 output $exm
 
+set $vmg 0:v0
+set $vm1 1:v1
+set $vm2 2:v2
+set $vm3 3:v3
+set $vm4 4:v4
+set $vm5 5:v5
+set $vm6 6:v6
+set $vm7 7:v7
+set $vm8 8:v8
+set $vm9 9:v9
+set $vm10 10:v10
+
+workspace $vmg output $exm
+workspace $vm1 output $exm
+workspace $vm2 output $exm
+workspace $vm3 output $exm
+workspace $vm4 output $exm
+workspace $vm5 output eDP-1
+workspace $vm6 output $exm
+workspace $vm7 output $exm
+workspace $vm8 output $exm
+workspace $vm9 output $exm
+workspace $vm10 output $exm
+
 ### Key bindings
 #
 # Basics:
@@ -185,6 +209,18 @@ workspace $ws10 output $exm
     bindsym $mod+8 workspace $ws8
     bindsym $mod+9 workspace $ws9
     bindsym $mod+0 workspace $ws10
+    # Switch to vm
+    bindsym $mod+Ctrl+grave workspace $vmg
+    bindsym $mod+Ctrl+1 workspace $vm1
+    bindsym $mod+Ctrl+2 workspace $vm2
+    bindsym $mod+Ctrl+3 workspace $vm3
+    bindsym $mod+Ctrl+4 workspace $vm4
+    bindsym $mod+Ctrl+5 workspace $vm5
+    bindsym $mod+Ctrl+6 workspace $vm6
+    bindsym $mod+Ctrl+7 workspace $vm7
+    bindsym $mod+Ctrl+8 workspace $vm8
+    bindsym $mod+Ctrl+9 workspace $vm9
+    bindsym $mod+Ctrl+0 workspace $vm10
     # Move focused container to workspace
     bindsym $mod+Shift+grave move container to workspace $wsg
     bindsym $mod+Shift+1 move container to workspace $ws1
