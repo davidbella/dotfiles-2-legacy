@@ -103,6 +103,9 @@ export PATH=$HOME/bin:$PATH
 # Add the home directory go path for `gopls`
 export PATH=$HOME/go/bin:$PATH
 
+# Add the directory for luarocks binaries
+export PATH=$HOME/.luarocks/bin:$PATH
+
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   # exec tmux
 # fi
