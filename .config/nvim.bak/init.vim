@@ -10,6 +10,7 @@ Plug 'hrsh7th/cmp-buffer'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-neorg/neorg-telescope'
 
 " NERDTree remains for now - I'm just too used to its functionality
 " Plug 'tpope/vim-vinegar'
@@ -29,7 +30,11 @@ Plug 'arcticicestudio/nord-vim'
 " Languages/Specialty
 Plug 'nathangrigg/vim-beancount'
 Plug 'elixir-lang/vim-elixir'
+
 Plug 'nvim-orgmode/orgmode'
+" Plug 'jceb/vim-orgmode'
+
+Plug 'nvim-neorg/neorg'
 call plug#end()
 
 let g:config_files = [
@@ -38,6 +43,7 @@ let g:config_files = [
       \ 'mappings.vim',
       \ 'plugins.vim',
       \ ]
+      " \ 'vim-orgmode.vim',
       " \ 'legacy.vim'
 
 for s:fname in g:config_files
@@ -45,5 +51,7 @@ for s:fname in g:config_files
 endfor
 
 lua require('lsp')
+lua require('neo')
 lua require('org')
 lua require('tel')
+lua require('ts')

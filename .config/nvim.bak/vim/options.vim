@@ -9,11 +9,11 @@ set shiftwidth=2
 " how many columns a tab counts for
 set tabstop=2
 " backspace for 2 on blank chars
-set backspace=2
+" set backspace=2
 " tab becomes spaces
 set expandtab
 " copy indentation from previous line
-set autoindent
+" set autoindent
 " attempt to indent to the correct level per source type
 set smartindent
 " Show tabs and trailing spaces
