@@ -10,3 +10,8 @@ require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
 require "user.lualine"
+-- experimental
+require "user.toggleterm"
+require "user.indentline"
+require "user.alpha"
+require "user.whichkey"
