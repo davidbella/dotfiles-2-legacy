@@ -10,6 +10,7 @@ require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
 require "user.lualine"
+require "user.orgmode"
 -- experimental
 require "user.toggleterm"
 require "user.indentline"

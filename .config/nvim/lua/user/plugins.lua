@@ -67,17 +67,17 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- nvim-tree
-  use 'kyazdani42/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons'
+  use "kyazdani42/nvim-tree.lua"
+  use "kyazdani42/nvim-web-devicons"
 
   -- telescope
   use "nvim-telescope/telescope.nvim"
 
   -- lualine
-  use 'nvim-lualine/lualine.nvim'
+  use "nvim-lualine/lualine.nvim"
 
   -- git
   use "lewis6991/gitsigns.nvim"
@@ -85,13 +85,19 @@ return packer.startup(function(use)
   -- elixir
   use "elixir-lang/vim-elixir"
 
+  -- orgmode
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup{}
+  end
+  }
+
   -- experimental
   use "akinsho/toggleterm.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "ahmedkhalf/project.nvim"
-  use 'lewis6991/impatient.nvim'
+  use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use 'goolord/alpha-nvim'
+  use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
 
