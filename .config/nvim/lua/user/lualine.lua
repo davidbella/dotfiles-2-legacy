@@ -14,7 +14,7 @@ local diagnostics = {
   symbols = { error = " ", warn = " " },
   colored = false,
   update_in_insert = false,
-  always_visible = true,
+  always_visible = false,
 }
 
 local diff = {
@@ -48,14 +48,19 @@ local location = {
   padding = 1,
 }
 
+local filename = {
+  "filename",
+  path = 1,
+}
+
 -- cool function for progress
 local progress = function()
   local current_line = vim.fn.line(".")
   local total_lines = vim.fn.line("$")
-  local chars = {  "██", "▇▇", "▆▆", "▅▅", "▄▄", "▃▃", "▂▂", "▁▁", "__" }
+  local chars = { "🮂🮂", "🮃🮃", "🮄🮄", "🮆🮆" }
   local line_ratio = current_line / total_lines
   local index = math.ceil(line_ratio * #chars)
-  return string.format("%.0f", line_ratio * 100) .. "%%" -- chars[index]
+  return string.format("%.0f", line_ratio * 100) .. "%% " .. chars[index]
 end
 
 -- local spaces = function()
@@ -74,7 +79,7 @@ lualine.setup({
   sections = {
     lualine_a = { branch, diagnostics },
     lualine_b = { },
-    lualine_c = { "filename" },
+    lualine_c = { filename },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_x = { diff, filetype },
     lualine_y = { location },
