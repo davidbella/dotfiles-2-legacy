@@ -55,7 +55,7 @@ local progress = function()
   local chars = {  "██", "▇▇", "▆▆", "▅▅", "▄▄", "▃▃", "▂▂", "▁▁", "__" }
   local line_ratio = current_line / total_lines
   local index = math.ceil(line_ratio * #chars)
-  return chars[index]
+  return string.format("%.0f", line_ratio * 100) .. "%%" -- chars[index]
 end
 
 -- local spaces = function()
