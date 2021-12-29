@@ -16,7 +16,7 @@ M.setup = function()
   local config = {
     virtual_text = false,
     signs = { active = signs },
-    update_in_insert = false,
+    update_in_insert = true,
     underline = false,
     severity_sort = true,
     float = {
@@ -32,6 +32,9 @@ M.setup = function()
 end
 
 -- TODO: What does this do?
+-- I'm pretty sure this is a "debounce" of some kind
+-- When your cursor is held (about a second) it will highlight the document
+-- When your cursor moves, it will clear the references (but not the highlights)
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
