@@ -3,6 +3,6 @@ if not status_ok then
   return
 end
 
-require("user.lsp.lsp-installer")
+require "user.lsp.lsp-installer"
 require("user.lsp.handlers").setup()
--- require "user.lsp.null-ls" -- unsure what I'll need this for, if I'll need it
+require "user.lsp.null-ls"
