@@ -3,14 +3,14 @@
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "", -- "",
-  git = { -- TODO: find good git icons for tree
-    unstaged = "▎", -- "",
-    staged = "▎",
+  git = {
+    unstaged = "✚", -- "",
+    staged = "●",
     unmerged = "",
     renamed = "➜",
-    deleted = "▎", -- "",
-    untracked = "▎",
-    ignored = "◌",
+    deleted = "✖", -- "",
+    untracked = "◌",
+    ignored = "",
   },
   folder = {
     default = "",

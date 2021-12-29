@@ -20,7 +20,7 @@ local diagnostics = {
 local diff = {
   "diff",
   colored = false,
-  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+  symbols = { added = "✚ ", modified = "● ", removed = "✖ " }, -- changes diff symbols
   cond = hide_in_width
 }
 
@@ -77,11 +77,11 @@ lualine.setup({
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { branch, diagnostics },
+    lualine_a = { diagnostics, branch, diff },
     lualine_b = { },
     lualine_c = { filename },
     -- lualine_x = { "encoding", "fileformat", "filetype" },
-    lualine_x = { diff, filetype },
+    lualine_x = { filetype },
     lualine_y = { location },
     lualine_z = { progress },
   },
