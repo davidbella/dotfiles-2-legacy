@@ -13,7 +13,6 @@ require "user.lualine"
 require "user.orgmode"
 -- experimental
 require "user.toggleterm"
-require "user.indentline"
 require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
