@@ -37,3 +37,9 @@ vim.opt.shortmess:append "c"               -- avoids "hit enter" menus on comple
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+function _G.custom_fold_text()
+  return vim.fn.getline(vim.v.foldstart)
+end
+
+vim.opt.foldtext = 'v:lua.custom_fold_text()'
