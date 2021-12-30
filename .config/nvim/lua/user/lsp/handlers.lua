@@ -16,19 +16,33 @@ M.setup = function()
   local config = {
     virtual_text = false,
     signs = { active = signs },
-    update_in_insert = true,
+    update_in_insert = false,
     underline = false,
     severity_sort = true,
     float = {
-      focusable = false,
-      style = "minimal",
-      source = "always",
-      header = "",
-      prefix = "",
+      border = "single",
     },
   }
 
   vim.diagnostic.config(config)
+
+  local border = {
+    {"┌", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"┐", "FloatBorder"},
+    {"│", "FloatBorder"},
+    {"┘", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"└", "FloatBorder"},
+    {"│", "FloatBorder"},
+  }
+
+  local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+  function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+  end
 end
 
 -- TODO: What does this do?
