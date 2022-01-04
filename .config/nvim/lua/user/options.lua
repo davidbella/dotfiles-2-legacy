@@ -30,6 +30,8 @@ local options = {
   sidescrolloff = 8,
 
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+
+  conceallevel = 2,
 }
 
 vim.opt.shortmess:append "c"               -- avoids "hit enter" menus on completion pop ups
