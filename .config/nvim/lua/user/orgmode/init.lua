@@ -39,7 +39,7 @@ require('orgmode').setup({
     },
     b = {
       description = 'Bookmark',
-      template = '* [[%?][]]\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n',
+      template = '* %?\n  %T\n  [[][]]',
       target = '~/Documents/MyDocuments/Orgmode/orgmode/bookmarks.org',
     },
     c = {
