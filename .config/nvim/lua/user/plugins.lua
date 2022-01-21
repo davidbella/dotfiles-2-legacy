@@ -76,6 +76,9 @@ return packer.startup(function(use)
   -- telescope
   use "nvim-telescope/telescope.nvim"
 
+  -- projectionist
+  use "tpope/vim-projectionist"
+
   -- lualine
   use "nvim-lualine/lualine.nvim"
 

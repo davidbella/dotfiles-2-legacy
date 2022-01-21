@@ -79,24 +79,17 @@ local opts = {
 }
 
 local mappings = {
-  ["b"] = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
-  ["c"] = { "<cmd>:let @+ = expand('%')<cr>:echo 'Copied!'<cr>", "Copy filename to clipboard" },
+  a = { "<cmd>:A<cr>", "alt" },
+  b = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
+  c = { "<cmd>:let @+ = expand('%')<cr>:echo 'Copied!'<cr>", "Copy filename to clipboard" },
   l = { "<cmd>NvimTreeFindFile<cr>", "Open file in tree" },
 
   f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
-  F = {
-    name = "Find",
-    f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find" },
-    g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
-    a = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "ack" },
-    j = { "<cmd>lua require('telescope.builtin').jumplist()<cr>", "jumplist" },
-  },
+  A = { "<cmd>lua require('telescope.builtin').grep_string()<cr><esc>", "ack" },
+  g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
 
-  g = {
-    name = "Git",
-    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
-    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
-  },
+  B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
+  D = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 
   k = {
     name = "LSP",

@@ -1,0 +1,50 @@
+{
+  "app/models/*.rb": {
+    "alternate": "test/models/{}_test.rb",
+    "type": "model",
+    "template": [
+      "# frozen_string_literal: true",
+      "",
+      "class {capitalize}",
+      "",
+      "end"
+    ]
+  },
+  "test/models/*_test.rb": {
+    "alternate": "app/models/{}.rb",
+    "type": "test",
+    "template": [
+      "# frozen_string_literal: true",
+      "",
+      "class {capitalize}Test",
+      "",
+      "end"
+    ]
+  },
+  "app/controllers/*.rb": {
+    "alternate": "test/controllers/{}_test.rb",
+    "type": "controller",
+    "template": [
+      "# frozen_string_literal: true",
+      "",
+      "class {capitalize}",
+      "",
+      "end"
+    ]
+  },
+  "test/controllers/*_test.rb": {
+    "alternate": "app/controllers/{}.rb",
+    "type": "test",
+    "template": [
+      "# frozen_string_literal: true",
+      "",
+      "class {capitalize|camelcase}Test",
+      "",
+      "end"
+    ]
+  },
+  "app/views/*.html.erb": {
+    "alternate": "app/controllers/{dirname}_controller.rb",
+    "type": "view"
+  }
+}
