@@ -45,10 +45,16 @@ M.setup = function()
   end
 end
 
--- TODO: What does this do?
 -- I'm pretty sure this is a "debounce" of some kind
 -- When your cursor is held (about a second) it will highlight the document
 -- When your cursor moves, it will clear the references (but not the highlights)
+
+-- I wasn't _totally_ wrong, I just didn't realize it because this never worked for me before.
+--   Updating plugins on 2022-01-09 made this work for some unknown reason.
+-- It actually highlights the chunk of code your cursor is on according to the LSP
+-- I had previously modified it to display the diagnostic float on cursor
+--   but I think that might be annoying.
+-- It doesn't work with Elixir because the elixir-ls server doesn't have the capability
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
@@ -56,7 +62,8 @@ local function lsp_highlight_document(client)
       [[
       augroup lsp_document_highlight
         autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.diagnostic.open_float()
+        " opens a float on cursor hover
+        " autocmd CursorHold <buffer> lua vim.diagnostic.open_float()
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END

@@ -81,6 +81,7 @@ local opts = {
 local mappings = {
   ["b"] = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
   ["c"] = { "<cmd>:let @+ = expand('%')<cr>:echo 'Copied!'<cr>", "Copy filename to clipboard" },
+  l = { "<cmd>NvimTreeFindFile<cr>", "Open file in tree" },
 
   f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
   F = {
@@ -101,8 +102,8 @@ local mappings = {
     name = "LSP",
     d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-    h = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Diagnostic Hover" },
-    k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Info Hover" },
+    h = { "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border = 'single' })<cr>", "Diagnostic" },
+    k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Info" },
     r = { "<cmd>Telescope lsp_references<cr>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
@@ -122,10 +123,6 @@ local mappings = {
 
   t = {
     name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-    t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },

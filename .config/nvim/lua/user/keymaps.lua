@@ -35,5 +35,5 @@ keymap("i", "<C-j>", "<esc><C-e>", opts)
 keymap("i", "<C-k>", "<esc><C-y>", opts)
 
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- keymap("v", "<", "<gv", opts)
+-- keymap("v", ">", ">gv", opts)
