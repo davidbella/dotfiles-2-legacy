@@ -84,6 +84,7 @@ local mappings = {
   b = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
   B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "toggle blame" },
   c = { "<cmd>:let @+ = expand('%')<cr>:echo 'copied!'<cr>", "copy filename to clipboard" },
+  C = { "<cmd>:Console<cr>", "console this file" },
   D = { "<cmd>Gitsigns diffthis HEAD<cr>", "diff" },
   f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "fd" },
   g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
