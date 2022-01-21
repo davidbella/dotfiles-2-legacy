@@ -79,44 +79,22 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  ["b"] = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "Find Files" },
+  ["b"] = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
   ["c"] = { "<cmd>:let @+ = expand('%')<cr>:echo 'Copied!'<cr>", "Copy filename to clipboard" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
-  ["F"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Find Text" },
-  ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
+  F = {
+    name = "Find",
+    f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find" },
+    g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
+    a = { "<cmd>lua require('telescope.builtin').grep_string()<cr>", "ack" },
+    j = { "<cmd>lua require('telescope.builtin').jumplist()<cr>", "jumplist" },
   },
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
-    },
+    d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+    l = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
   },
 
   k = {
@@ -124,13 +102,10 @@ local mappings = {
     d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     h = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Diagnostic Hover" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Info Hover" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>Telescope lsp_references<cr>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-    w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
+    w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
   },
 
   s = {

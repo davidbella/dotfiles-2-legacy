@@ -20,7 +20,7 @@ gitsigns.setup {
     follow_files = true,
   },
   attach_to_untracked = true,
-  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = "right_align", -- 'eol' | 'overlay' | 'right_align'
@@ -30,6 +30,30 @@ gitsigns.setup {
   current_line_blame_formatter_opts = {
     relative_time = false,
   },
+  -- this function is a direct copy of the default
+  -- except it truncates the commit message to fewer characters, to prevent strange overlapping
+  current_line_blame_formatter = function(name, blame_info, opts)
+    if blame_info.author == name then
+      blame_info.author = 'You'
+    end
+
+    local text
+    if blame_info.author == 'Not Committed Yet' then
+      text = blame_info.author
+    else
+      local date_time
+
+      if opts.relative_time then
+        date_time = require('gitsigns.util').get_relative_time(tonumber(blame_info['author_time']))
+      else
+        date_time = os.date('%Y-%m-%d', tonumber(blame_info['author_time']))
+      end
+
+      text = string.format('%s, %s - %s', blame_info.author, date_time, string.sub(blame_info.summary, 1, 10))
+    end
+
+    return {{' '..text, 'GitSignsCurrentLineBlame'}}
+  end,
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default

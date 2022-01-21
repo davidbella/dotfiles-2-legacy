@@ -48,7 +48,6 @@ require('orgmode').setup({
       target = '~/Documents/MyDocuments/Orgmode/orgmode/citations.org',
     }
   },
-  org_hide_leading_stars = true,
 })
 
 require 'user.orgmode.local-orgfiles'
