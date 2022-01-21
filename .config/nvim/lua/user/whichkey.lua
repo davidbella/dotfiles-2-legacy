@@ -80,16 +80,14 @@ local opts = {
 
 local mappings = {
   a = { "<cmd>:A<cr>", "alt" },
+  A = { "<cmd>lua require('telescope.builtin').grep_string()<cr><esc>", "ack (under cursor)" },
   b = { "<cmd>lua require('telescope.builtin').buffers()<cr><esc>", "buffers" },
-  c = { "<cmd>:let @+ = expand('%')<cr>:echo 'Copied!'<cr>", "Copy filename to clipboard" },
-  l = { "<cmd>NvimTreeFindFile<cr>", "Open file in tree" },
-
-  f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find File" },
-  A = { "<cmd>lua require('telescope.builtin').grep_string()<cr><esc>", "ack" },
+  B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "toggle blame" },
+  c = { "<cmd>:let @+ = expand('%')<cr>:echo 'copied!'<cr>", "copy filename to clipboard" },
+  D = { "<cmd>Gitsigns diffthis HEAD<cr>", "diff" },
+  f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "fd" },
   g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
-
-  B = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Blame" },
-  D = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
+  l = { "<cmd>NvimTreeFindFile<cr>", "open file in tree" },
 
   k = {
     name = "LSP",
@@ -97,9 +95,9 @@ local mappings = {
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     h = { "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border = 'single' })<cr>", "Diagnostic" },
     k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Info" },
-    r = { "<cmd>Telescope lsp_references<cr>", "References" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
+    r = { "<cmd>Telescope lsp_references<cr><esc>", "References" },
+    s = { "<cmd>Telescope lsp_document_symbols<cr><esc>", "Document Symbols" },
+    w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr><esc>", "Workspace Symbols" },
   },
 
   s = {
