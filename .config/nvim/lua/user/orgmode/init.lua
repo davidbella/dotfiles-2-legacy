@@ -24,7 +24,7 @@ require('orgmode').setup({
     '~/Documents/MyDocuments/Orgmode/orgmode/agenda/*.org',
   },
   org_default_notes_file = '~/Documents/MyDocuments/Orgmode/orgmode/refile.org',
-  org_todo_keywords = {'TODO(t)', 'CANCELED(c)', '|', 'RESCHED(r)', 'DONE(d)'},
+  org_todo_keywords = {'TODO(t)', 'CANCELED(c)', 'SKIPPED(s)', '|', 'RESCHED(r)', 'DONE(d)'},
   org_agenda_start_on_weekday = false,
   org_agenda_templates = {
     t = {
