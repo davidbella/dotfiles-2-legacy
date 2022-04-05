@@ -88,7 +88,7 @@ local mappings = {
   D = { "<cmd>Gitsigns diffthis HEAD<cr>", "diff" },
   f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "fd" },
   g = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "grep" },
-  l = { "<cmd>NvimTreeFindFile<cr>", "open file in tree" },
+  l = { "<cmd>NvimTreeFindFileToggle<cr>", "open file in tree" },
 
   k = {
     name = "LSP",

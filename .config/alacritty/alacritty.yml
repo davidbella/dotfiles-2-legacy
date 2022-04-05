@@ -530,8 +530,8 @@ cursor:
 # at once.
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: V,        mods: Control, action: Paste                   }
-  #- { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: V,        mods: Control,       action: Paste             }
+  - { key: C,        mods: Control|Shift, action: Copy              }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
   #- { key: Key0,     mods: Control,       action: ResetFontSize    }
   #- { key: Equals,   mods: Control,       action: IncreaseFontSize }
@@ -561,8 +561,8 @@ key_bindings:
   #- { key: Copy,                     action: Copy                             }
   #- { key: L,         mods: Control, action: ClearLogNotice                   }
   #- { key: L,         mods: Control, chars: "\x0c"                            }
-  - { key: K,    mods: Control,   action: ScrollLineUp, mode: ~Alt }
-  - { key: J,    mods: Control,   action: ScrollLineDown, mode: ~Alt }
+  - { key: K,    mods: Control,   action: ScrollLineUp }
+  - { key: J,    mods: Control,   action: ScrollLineDown }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 

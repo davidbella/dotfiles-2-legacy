@@ -21,8 +21,6 @@ vim.g.nvim_tree_icons = {
   },
 }
 
-vim.g.nvim_tree_quit_on_open = 1
-
 vim.g.nvim_tree_show_icons = {
  git = 1,
  folders = 1,
@@ -51,7 +49,6 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
-  auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
@@ -102,6 +99,11 @@ nvim_tree.setup {
     },
     number = false,
     relativenumber = false,
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
   },
   trash = {
     cmd = "trash",

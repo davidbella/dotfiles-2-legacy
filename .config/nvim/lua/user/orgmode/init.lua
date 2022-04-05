@@ -8,6 +8,8 @@ parser_config.org = {
   filetype = 'org',
 }
 
+require('orgmode').setup_ts_grammar()
+
 require'nvim-treesitter.configs'.setup {
   -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
   highlight = {
@@ -24,8 +26,9 @@ require('orgmode').setup({
     '~/Documents/MyDocuments/Orgmode/orgmode/agenda/*.org',
   },
   org_default_notes_file = '~/Documents/MyDocuments/Orgmode/orgmode/refile.org',
-  org_todo_keywords = {'TODO(t)', 'CANCELED(c)', 'SKIPPED(s)', '|', 'RESCHED(r)', 'DONE(d)'},
+  org_todo_keywords = {'TODO(t)', 'NEXT(n)', "WAIT(w)", "HOLD(h)", '|', 'CNCL(c)', 'DONE(d)', 'MEET'},
   org_agenda_start_on_weekday = false,
+  org_agenda_skip_scheduled_if_done = true,
   org_agenda_templates = {
     t = {
       description = 'Task',
@@ -46,6 +49,11 @@ require('orgmode').setup({
       description = 'Citation',
       template = '* %?\n  :PROPERTIES:\n  :CREATED: %U\n  :TITLE:     \n  :BTYPE:     \n  :CUSTOM_ID: \n  :AUTHOR:    \n  :YEAR:      \n  :PUBLISHER: \n  :END:\n\n',
       target = '~/Documents/MyDocuments/Orgmode/orgmode/citations.org',
+    },
+    s = {
+      description = 'Schedule',
+      template = '* TODO %?\n  SCHEDULED: %T',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/schedule.org',
     }
   },
 })
