@@ -28,6 +28,8 @@ vim.g.nvim_tree_show_icons = {
  folder_arrows = 0,
 }
 
+vim.g.nvim_tree_highlight_opened_files = 3
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -43,7 +45,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   disable_netrw = false,
   hijack_netrw = true,
-  open_on_setup = false,
+  open_on_setup = true,
   ignore_ft_on_setup = {
     "startify",
     "dashboard",
@@ -84,7 +86,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 40,
     height = 30,
     hide_root_folder = false,
     side = "left",
@@ -92,8 +94,8 @@ nvim_tree.setup {
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
+        -- { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+        -- { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
@@ -107,12 +109,17 @@ nvim_tree.setup {
   },
   trash = {
     cmd = "trash",
-    require_confirm = true,
+    require_confirm = false,
   },
-  quit_on_open = 1,
+  actions = {
+    open_file = {
+      -- quit_on_open = 1,
+    }
+  },
   git_hl = 1,
   disable_window_picker = 0,
   root_folder_modifier = ":t",
+  -- highlight_focused_file = true,
   show_icons = {
     git = 1,
     folders = 1,
@@ -121,3 +128,7 @@ nvim_tree.setup {
     tree_width = 30,
   },
 }
+
+vim.cmd[[au VimEnter * hi NvimTreeGitDirty ctermfg=yellow]]
+vim.cmd[[au VimEnter * hi NvimTreeGitNew ctermfg=green]]
+vim.cmd[[au VimEnter * hi NvimTreeOpenedFile cterm=bold ctermbg=NONE]]
