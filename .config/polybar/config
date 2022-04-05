@@ -69,7 +69,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory pulseaudio wlan battery
+modules-right = filesystem cpu memory pulseaudio wlan battery
 
 tray-position = right
 tray-padding = 2

@@ -3,13 +3,17 @@ if not status_ok then
   return
 end
 
+vim.cmd[[au VimEnter * hi GitSignsAdd ctermfg=green]]
+vim.cmd[[au VimEnter * hi GitSignsChange ctermfg=yellow]]
+vim.cmd[[au VimEnter * hi GitSignsDelete ctermfg=red]]
+
 gitsigns.setup {
   signs = {
-    add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-    change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
-    delete = { hl = "GitSignsDelete", text = "▎", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" }, -- 契
-    topdelete = { hl = "GitSignsDelete", text = "▎", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" }, -- 契
-    changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
+    add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" }, -- ▎
+    change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" }, -- ▎
+    delete = { hl = "GitSignsDelete", text = "_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" }, -- 契
+    topdelete = { hl = "GitSignsDelete", text = "‾", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" }, -- 契
+    changedelete = { hl = "GitSignsChange", text = "~", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
@@ -49,7 +53,8 @@ gitsigns.setup {
         date_time = os.date('%Y-%m-%d', tonumber(blame_info['author_time']))
       end
 
-      text = string.format('%s, %s - %s', blame_info.author, date_time, string.sub(blame_info.summary, 1, 10))
+      -- text = string.format('%s, %s - %s', blame_info.author, date_time, string.sub(blame_info.summary, 1, 20))
+      text = string.format('%s, %s', blame_info.author, date_time)
     end
 
     return {{' '..text, 'GitSignsCurrentLineBlame'}}

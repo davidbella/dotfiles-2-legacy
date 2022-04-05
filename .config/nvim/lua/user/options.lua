@@ -34,6 +34,8 @@ local options = {
   conceallevel = 2,
 }
 
+vim.cmd[[au VimEnter * hi Visual cterm=bold ctermbg=NONE]]
+
 vim.opt.shortmess:append "c"               -- avoids "hit enter" menus on completion pop ups
 
 for k, v in pairs(options) do

@@ -21,6 +21,22 @@
       "end"
     ]
   },
+  "app/services/*.rb": {
+    "alternate": "test/services/{}_test.rb",
+    "type": "service"
+  },
+  "test/services/*_test.rb": {
+    "alternate": "app/services/{}.rb",
+    "type": "test"
+  },
+  "app/queries/*.rb": {
+    "alternate": "test/queries/{}_test.rb",
+    "type": "query"
+  },
+  "test/queries/*_test.rb": {
+    "alternate": "app/queries/{}.rb",
+    "type": "test"
+  },
   "app/controllers/*.rb": {
     "alternate": "test/controllers/{}_test.rb",
     "type": "controller",

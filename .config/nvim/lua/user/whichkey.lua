@@ -97,6 +97,7 @@ local mappings = {
     h = { "<cmd>lua vim.diagnostic.open_float(0, { scope = 'line', border = 'single' })<cr>", "Diagnostic" },
     k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Info" },
     r = { "<cmd>Telescope lsp_references<cr><esc>", "References" },
+    R = { "<cmd>Telescope lsp_references<cr><esc>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<cr><esc>", "Document Symbols" },
     w = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr><esc>", "Workspace Symbols" },
   },
