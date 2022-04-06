@@ -97,6 +97,7 @@ nvim_tree.setup {
         -- { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         -- { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "C", cb = tree_cb "cd" },
       },
     },
     number = false,
@@ -104,17 +105,12 @@ nvim_tree.setup {
   },
   actions = {
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
     }
   },
   trash = {
     cmd = "trash",
     require_confirm = false,
-  },
-  actions = {
-    open_file = {
-      -- quit_on_open = 1,
-    }
   },
   git_hl = 1,
   disable_window_picker = 0,
