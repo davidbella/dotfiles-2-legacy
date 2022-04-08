@@ -334,7 +334,7 @@ bindswitch --reload --locked lid:off exec ~/bin/laptop-clamshell.sh
 # }
 
 exec_always ~/.config/waybar/launch.sh
-exec_always ~/bin/laptop-clamshell.sh
+# exec_always ~/bin/laptop-clamshell.sh
 # exec_always kanshi
 
 # TODO: Make this a script for idempotency
