@@ -4,5 +4,8 @@ vim.cmd [[
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark
+  catch
+    colorscheme default
+    set background=dark
   endtry
 ]]

@@ -54,10 +54,6 @@ nvim_tree.setup {
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
-  update_to_buf_dir = {
-    enable = true,
-    auto_open = true,
-  },
   diagnostics = {
     enable = true,
     icons = {
@@ -90,7 +86,6 @@ nvim_tree.setup {
     height = 30,
     hide_root_folder = false,
     side = "left",
-    auto_resize = true,
     mappings = {
       custom_only = false,
       list = {
@@ -105,6 +100,7 @@ nvim_tree.setup {
   },
   actions = {
     open_file = {
+      resize_window = true,
       quit_on_open = false,
     }
   },
@@ -112,17 +108,7 @@ nvim_tree.setup {
     cmd = "trash",
     require_confirm = false,
   },
-  git_hl = 1,
-  disable_window_picker = 0,
-  root_folder_modifier = ":t",
   -- highlight_focused_file = true,
-  show_icons = {
-    git = 1,
-    folders = 1,
-    files = 1,
-    folder_arrows = 1,
-    tree_width = 30,
-  },
 }
 
 vim.cmd[[au VimEnter * hi NvimTreeGitDirty ctermfg=yellow]]
