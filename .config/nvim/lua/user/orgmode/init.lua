@@ -29,14 +29,25 @@ require('orgmode').setup({
   org_todo_keywords = {'TODO(t)', 'NEXT(n)', "WAIT(w)", "HOLD(h)", '|', 'CNCL(c)', 'DONE(d)', 'MEET'},
   org_agenda_start_on_weekday = false,
   org_agenda_skip_scheduled_if_done = true,
+  org_agenda_span = 'day',
   org_agenda_templates = {
+    n = {
+      description = 'Note - a quick note to refile/rewrite later',
+      template = '* %?\n  %T',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/refile.org',
+    },
     t = {
-      description = 'Task',
+      description = 'Task - similar to note, but something must be done',
       template = '* TODO %?\n  %T',
       target = '~/Documents/MyDocuments/Orgmode/orgmode/refile.org',
     },
+    j = {
+      description = 'Journal - similar to note, but more of a journal style, to it\'s own file',
+      template = '* %<%Y-%m-%d %A %I:%M %p>\n  %U\n  %?',
+      target = '~/Documents/MyDocuments/Orgmode/orgmode/journal.org',
+    },
     s = {
-      description = 'Schedule',
+      description = 'Schedule - a meeting, appointment, or task to be at a certain time',
       template = '* TODO %?\n  SCHEDULED: %T',
       target = '~/Documents/MyDocuments/Orgmode/orgmode/schedule.org',
     },
