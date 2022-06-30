@@ -1,35 +1,5 @@
 -- currently being migrated to lua config
 -- https://github.com/kyazdani42/nvim-tree.lua/issues/674
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "", -- "",
-  git = {
-    unstaged = "✚", -- "",
-    staged = "●",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "✖", -- "",
-    untracked = "◌",
-    ignored = "",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "", -- "",
-  },
-}
-
-vim.g.nvim_tree_show_icons = {
- git = 1,
- folders = 1,
- files = 1,
- folder_arrows = 0,
-}
-
-vim.g.nvim_tree_highlight_opened_files = 3
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -62,6 +32,38 @@ nvim_tree.setup {
       warning = "",
       error = "",
     },
+  },
+  renderer = {
+    highlight_opened_files = "all",
+
+    icons = {
+      glyphs = {
+        default = "",
+        symlink = "", -- "",
+        git = {
+          unstaged = "✚", -- "",
+          staged = "●",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "✖", -- "",
+          untracked = "◌",
+          ignored = "",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "", -- "",
+        },
+      },
+      show = {
+        git = true,
+        folder = true,
+        file = true,
+        folder_arrow = false,
+      }
+    }
   },
   update_focused_file = {
     enable = true,
